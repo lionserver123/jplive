@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>關於JP真人</title>
+<meta name="description" content="JP真人品牌介紹：四大特色、品牌理念與三大安心保障。">
+<link rel="icon" href="img/favicon.ico" sizes="48x48"><link rel="icon" href="img/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"><meta name="theme-color" content="#032116"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+/* JP Live — shared styles. Tokens come from the Figma file's styles (品牌主色 / 品牌深色 / 品牌輔色 / 品牌亮色 / 品牌副輔色). */
+:root {
+  --brand: #003f30;      /* 品牌主色 */
+  --brand-deep: #032116; /* 品牌深色 */
+  --brand-mid: #26776c;  /* 品牌輔色 */
+  --brand-bright: #00ad90; /* 品牌亮色 */
+  --mint: #35a495;
+  --gold: #ffd43b;       /* 品牌副輔色 */
+  --gold-edge: #fff156;
+  --ink: #000;
+  --ink-soft: #333;
+  --white: #fff;
+  --paper: #fafcfb;
+  --font-ch: "Noto Sans TC", "Noto Sans", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-en: "Inter", "Noto Sans TC", system-ui, sans-serif;
+  --gutter: 56px;
+  --maxw: 1610px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body { margin: 0; font-family: var(--font-ch); font-size: 16px; line-height: 24px; font-weight: 400; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+p { margin: 0; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
+
+.wrap { width: 100%; max-width: var(--maxw); margin-inline: auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+
+/* ---------- Buttons (190 x 50 everywhere; hover states from the Figma UI page) ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 50px; width: 190px; flex: none;
+  border-radius: 80px; border: 1px solid var(--white); font-weight: 400; font-size: 16px; line-height: 24px;
+  white-space: nowrap; cursor: pointer; transition: background-color .3s linear, color .3s linear, border-color .3s linear, box-shadow .3s linear; }
+.btn-white { background: var(--white); color: var(--brand); }
+.btn-white:hover { background: var(--mint); border-color: var(--brand-bright); color: var(--white); transition-duration: .35s; }
+.btn-green { background: var(--brand); color: var(--white); }
+.btn-green:hover { background: var(--white); border-color: var(--brand-bright); color: var(--brand); }
+.btn-ghost { background: transparent; color: var(--white); width: 136px; }
+.btn-ghost:hover { background: var(--white); color: var(--brand-deep); }
+.btn-gold { background: var(--gold); color: var(--brand); border-color: var(--gold-edge); }
+.btn-gold:hover { box-shadow: 0 0 20px #ffe100; }
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ---------- Header ---------- */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+  background: linear-gradient(to bottom, #000604 0%, var(--brand-deep) 61%); border-bottom: 1px solid var(--white); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: #000604; }
+.site-header .wrap { height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo img { width: 101px; height: 48px; }
+.nav { display: flex; align-items: center; }
+.nav-links { display: flex; }
+.nav-links a { width: 160px; height: 50px; padding: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  color: var(--white); font-weight: 400; position: relative; }
+.nav-links a::after { content: ""; width: 58px; height: 2px; background: transparent; transition: background-color .35s linear; }
+.nav-links a:hover::after, .nav-links a[aria-current="page"]::after { background: var(--white); }
+.head-reg { display: none; }
+.nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.5); border-radius: 10px; background: transparent; color: var(--white); cursor: pointer; align-items: center; justify-content: center; }
+.nav-toggle .bars { position: relative; width: 20px; height: 12px; display: block; }
+.nav-toggle .bars span { position: absolute; left: 0; width: 100%; height: 2px; border-radius: 2px; background: currentColor; transition: top .25s ease, transform .25s ease; }
+.nav-toggle .bars span:first-child { top: 0; }
+.nav-toggle .bars span:last-child { top: 10px; }
+.nav-toggle[aria-expanded="true"] .bars span { top: 5px; }
+.nav-toggle[aria-expanded="true"] .bars span:first-child { transform: rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .bars span:last-child { transform: rotate(-45deg); }
+@media (prefers-reduced-motion: reduce) { .nav-toggle .bars span { transition: none; } }
+
+@media (max-width: 1280px) { .nav-links a { width: auto; min-width: 88px; padding-inline: 14px; } }
+@media (max-width: 1040px) {
+  .nav-toggle { display: inline-flex; }
+  .nav { position: absolute; top: 100%; left: 0; right: 0; background: var(--brand-deep); border-bottom: 1px solid var(--brand-mid);
+    flex-direction: column; align-items: stretch; padding: 8px max(16px, env(safe-area-inset-right, 0px)) 20px max(16px, env(safe-area-inset-left, 0px)); gap: 12px; }
+  .nav:not(.open) { display: none; }
+  .nav-links { flex-direction: column; }
+  .nav-links a { width: 100%; height: 48px; align-items: center; text-align: center; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .nav > .btn { display: none; }
+  .head-reg { display: inline-flex; margin-left: auto; width: auto; height: 44px; padding: 0 20px; font-size: 14px; }
+  .nav-links a::after { display: none; }
+}
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--white); background: linear-gradient(to top, #000604 0%, var(--brand-deep) 61%); color: var(--white); }
+.site-footer .wrap { padding-block: 60px; display: flex; gap: 60px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.licences { display: flex; gap: 60px; align-items: center; flex-wrap: wrap; justify-content: center; }
+.licences img { height: auto; }
+.foot-cols { display: flex; gap: 16px; align-items: flex-start; }
+.foot-col { width: 109px; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.foot-col h4 { font-size: 16px; font-weight: 400; line-height: 24px; }
+.foot-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.foot-col a { display: block; padding: 4px 8px; font-size: 12px; line-height: 15px; text-align: center; transition: opacity .35s linear; }
+.foot-col a:hover { opacity: .5; }
+.stores { display: flex; flex-direction: column; gap: 8px; width: 120px; }
+.stores img { width: 120px; height: 40px; }
+@media (max-width: 760px) {
+  .site-footer .wrap { gap: 36px; padding-block: 40px; }
+  .licences { gap: 24px 32px; }
+  .licences img { transform: scale(.82); }
+  .foot-cols { flex-wrap: wrap; justify-content: center; }
+}
+
+/* ---------- Section heading (icon box + zh/en titles) ---------- */
+.sec-head { display: flex; gap: 24px; align-items: center; }
+.sec-head.center { flex-direction: column; text-align: center; }
+.icon-box { flex: none; width: 40px; height: 40px; border: 2px solid var(--white); border-radius: 8px; display: grid; place-items: center; }
+.icon-box svg { display: block; }
+.icon-box.bare { border: 0; width: 42px; height: 42px; }
+.sec-titles { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.sec-titles h2 { font-size: 38px; line-height: 42px; font-weight: 700; }
+.sec-titles .en { font-family: var(--font-en); font-weight: 300; font-size: 24px; line-height: 1.1; }
+.sec-titles .en.semi { font-family: var(--font-ch); font-weight: 400; font-size: 16px; line-height: 24px; } /* Body style (Figma 4193:2211) */
+
+@media (max-width: 760px) {
+  :root { --gutter: 16px; }
+  .sec-titles h2 { font-size: 28px; line-height: 34px; }
+  .sec-titles .en { font-size: 18px; }
+  .sec-titles { gap: 10px; }
+}
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Back to top (Figma 4213:10029) */
+.to-top { position: fixed; right: max(24px, env(safe-area-inset-right, 0px) + 16px); bottom: max(24px, env(safe-area-inset-bottom, 0px) + 16px); z-index: 60;
+  width: 60px; height: 60px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,.3)); opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity .3s linear, visibility .3s linear, transform .3s ease, filter .3s linear; }
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { transform: translateY(-3px); filter: drop-shadow(0 6px 10px rgba(0,0,0,.4)) brightness(1.05); }
+.to-top:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.to-top svg { display: block; }
+@media (max-width: 760px) { .to-top, .to-top svg { width: 48px; height: 48px; } }
+
+/* Phones: button rows sit side by side and centred; single buttons are centred */
+@media (max-width: 760px) {
+  .btn-row { justify-content: center; flex-wrap: nowrap; align-self: stretch !important; }
+  .btn-row .btn { flex: 1 1 0; min-width: 0; max-width: 190px; }
+  .hero-copy > .btn, .split-copy > .btn { align-self: center !important; }
+  .game-body .btn { margin-inline: auto; }
+}
+
+/* Home: single dark look, as in the Figma frame XL-1440 */
+:root { color-scheme: dark; }
+body { background: #0f1c1c; }
+.home { color: var(--white); position: relative; isolation: isolate;
+  background: #0f1c1c url(img/bg.jpg) center top / cover no-repeat; }
+/* On narrow, very tall pages "cover" would blow the suit pattern up; pin it to the screen instead */
+@media (max-width: 1023px) {
+  .home { background: #0f1c1c; }
+  .home::before { content: ""; position: fixed; inset: 0; z-index: -1; background: url(img/bg.jpg) center / cover no-repeat; }
+}
+.home main { display: flex; flex-direction: column; gap: 72px; padding-block: 72px; }
+.home main > section { display: flex; flex-direction: column; gap: 32px; }
+
+.panel { background: var(--brand-deep); border: 2px solid var(--mint); border-radius: 40px; padding: 8px; overflow: hidden; }
+
+/* Hero */
+.hero-stack { display: flex; flex-direction: column; gap: 24px; }
+.hero { display: flex; align-items: stretch; }
+.hero-img { flex: 0 1 850px; min-width: 0; border-radius: 32px; overflow: hidden; aspect-ratio: 850 / 448; }
+.hero-img img, .media img { width: 100%; height: 100%; object-fit: cover; }
+.hero-copy { flex: 1 1 0; min-width: 0; padding: 36px; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.copy-block { display: flex; flex-direction: column; gap: 16px; }
+.h1 { color: var(--gold); font-size: 38px; line-height: 42px; font-weight: 700; }
+.h1 .en { font-family: var(--font-en); font-weight: 800; font-size: 36px; }
+.sub { font-size: 24px; line-height: 28px; font-weight: 600; }
+
+/* News ticker: scrolls continuously at the Figma speed (3052px per 10s); script sets the duration */
+.ticker { display: flex; align-items: center; background: var(--brand-deep); border: 2px solid var(--mint); border-radius: 16px; overflow: hidden; }
+.ticker-tag { --tip: 22px; flex: none; width: 176px; height: 56px; padding-right: var(--tip); margin-right: calc(var(--tip) * -1); background: var(--gold); color: var(--brand); display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 24px; line-height: 28px; font-weight: 600; position: relative; z-index: 1;
+  clip-path: polygon(0 0, calc(100% - var(--tip)) 0, 100% 50%, calc(100% - var(--tip)) 100%, 0 100%); }
+.ticker-tag .dot { width: 9px; height: 9px; background: var(--brand-deep); transform: rotate(45deg); flex: none; }
+.ticker-view { padding-left: var(--tip-gap, 22px); }
+.ticker-view { flex: 1; min-width: 0; overflow: hidden; }
+.ticker-track { display: flex; width: max-content; animation: ticker var(--ticker-dur, 11s) linear infinite; }
+.ticker:hover .ticker-track, .ticker:focus-within .ticker-track { animation-play-state: paused; }
+.ticker-track a { display: flex; align-items: center; gap: 12px; height: 56px; padding-left: 36px; white-space: nowrap; background: var(--brand-deep); transition: background-color .35s linear, color .35s linear; }
+.ticker-track a:hover { background: #043020; color: var(--gold); }
+.ticker-track a::after { content: ""; width: 1px; height: 24px; background: #d9d9d9; margin-left: 24px; }
+@keyframes ticker { to { transform: translateX(-50%); } }
+
+/* Animated gradient border (Figma: Default → Variant2 → Variant3 loop, after-timeout smart animate) */
+@property --c0 { syntax: "<color>"; inherits: false; initial-value: #35a495; }
+@property --c1 { syntax: "<color>"; inherits: false; initial-value: #35a495; }
+@property --c2 { syntax: "<color>"; inherits: false; initial-value: #35a495; }
+@property --c3 { syntax: "<color>"; inherits: false; initial-value: #35a495; }
+.shine { border: 2px solid transparent;
+  background: var(--inner) padding-box, linear-gradient(to bottom right, var(--c0) 0%, var(--c1) 10%, var(--c2) 90%, var(--c3) 100%) border-box; }
+.shine-game { --inner: linear-gradient(var(--brand-deep), var(--brand-deep)); animation: shine-game 2.55s linear infinite; }
+.shine-dark { --inner: var(--inner-dark, radial-gradient(120% 140% at 100% 100%, #18674a 0%, #0e4430 30%, #083223 46%, var(--brand-deep) 61%));
+  --c0: var(--brand); --c1: var(--brand); --c2: var(--brand); --c3: var(--brand); animation: shine-dark 3s linear infinite; }
+@keyframes shine-game {
+  0%, 11.8%   { --c0: #35a495; --c1: #35a495; --c2: #35a495; --c3: #35a495; }
+  25.5%       { --c0: #26776c; --c1: #2a8276; --c2: #47ddc9; --c3: #f2ff8e; }
+  56.9%, 68.6% { --c0: #f2ff8e; --c1: #47ddc9; --c2: #2a8276; --c3: #26776c; }
+  100%        { --c0: #35a495; --c1: #35a495; --c2: #35a495; --c3: #35a495; }
+}
+@keyframes shine-dark {
+  0%, 10%     { --c0: #003f30; --c1: #003f30; --c2: #003f30; --c3: #003f30; }
+  36.7%       { --c0: #003f30; --c1: #085041; --c2: #47ddc9; --c3: #f2ff8e; }
+  63.3%, 73.3% { --c0: #f2ff8e; --c1: #47ddc9; --c2: #085041; --c3: #003f30; }
+  100%        { --c0: #003f30; --c1: #003f30; --c2: #003f30; --c3: #003f30; }
+}
+
+/* Game cards */
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.game { border-radius: 28px; overflow: hidden; display: flex; flex-direction: column; }
+.game .media { aspect-ratio: 600 / 272; }
+.game-body { display: flex; gap: 8px; align-items: center; padding: 36px; flex-wrap: wrap; }
+.game-body > div { flex: 1 1 180px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.card-title { font-family: var(--font-en); font-weight: 800; font-size: 28px; line-height: 1.2; color: var(--gold); }
+
+/* Split panels (RG / brand) */
+.split { display: flex; min-height: 360px; }
+.split > .media { flex: 1 1 0; min-width: 0; border-radius: 32px 0 0 32px; overflow: hidden; }
+.split.reverse > .media { border-radius: 0 32px 32px 0; }
+.split-copy { flex: 1 1 0; min-width: 0; padding: 48px; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.h1-en { font-family: var(--font-en); font-weight: 800; font-size: 36px; line-height: 42px; color: var(--gold); }
+
+/* Advantages */
+/* Figma 4030:512: animated gradient border (Default → Variant2 → Variant3, 3s loop);
+   image sits under a 30% black veil, hover brings it back to full colour (0.3s) */
+.adv { --inner-dark: linear-gradient(var(--brand-deep), var(--brand-deep)); border-radius: 28px; overflow: hidden; display: flex; flex-direction: column; }
+.adv .media { aspect-ratio: 1; position: relative; }
+.adv .media img, .promo img { filter: brightness(.7); transition: filter .3s linear; }
+.adv:hover .media img, .promo:hover img { filter: none; }
+.glow { background: radial-gradient(120% 140% at 100% 100%, #18674a 0%, #0e4430 30%, #083223 46%, var(--brand-deep) 61%); }
+.adv-body { flex: 1; padding: 36px; text-align: center; display: flex; flex-direction: column; gap: 16px; align-items: center; }
+
+/* Demo */
+.demo { display: flex; flex-direction: column; }
+.demo-stage { position: relative; border-radius: 32px; overflow: hidden; aspect-ratio: 1478 / 832; }
+.demo-stage img { width: 100%; height: 100%; object-fit: cover; }
+/* the exported image carries the button; this live 190 x 50 button sits exactly on top of it */
+.demo-stage .btn { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.demo-copy { padding: 32px 48px; text-align: center; display: flex; flex-direction: column; gap: 16px; align-items: center; }
+
+/* Features */
+.feat { border-radius: 28px; padding: 36px; display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center; }
+.feat-title { display: flex; align-items: center; gap: 16px; width: 100%; }
+.feat-title::before, .feat-title::after { content: ""; flex: 1; height: 1px; background: var(--gold); }
+.feat-title h3 { font-family: var(--font-en); font-weight: 800; font-size: 28px; line-height: 1.2; color: var(--gold); }
+
+/* FAQ: closed = Variant2, open = Variant3 */
+.faq-list { display: flex; flex-direction: column; gap: 32px; }
+.faq { border: 2px solid var(--brand-bright); border-radius: 32px; overflow: hidden; background: var(--brand); transition: border-color .35s linear; }
+/* hover (closed): Figma 4155:4677 */
+.faq:not([open]):hover { border-color: #ffedac; }
+.faq:not([open]):hover summary { background: var(--gold); }
+.faq:not([open]):hover .num { border-color: var(--brand); color: var(--brand); }
+.faq:not([open]):hover .q { color: var(--brand); }
+.faq summary { list-style: none; background: var(--brand); padding: 32px; display: flex; align-items: center; gap: 24px; cursor: pointer; border-radius: 30px; transition: background-color .35s linear; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq .num { flex: none; width: 40px; height: 40px; border: 1px solid var(--gold); border-radius: 8px; display: grid; place-items: center; color: var(--gold); font-weight: 900; font-size: 16px; transition: background-color .35s linear, color .35s linear, border-color .35s linear; }
+.faq .q { flex: 1; min-width: 0; font-size: 18px; line-height: 20px; font-weight: 600; transition: color .35s linear; }
+.faq .plus { flex: none; }
+.faq .plus .v { transition: opacity .3s linear; }
+.faq[open] summary { background: var(--gold); border-radius: 0; }
+.faq[open] .num { background: #fff159; border-color: #fff159; color: var(--brand-deep); }
+.faq[open] .q { color: #000; }
+.faq[open] .plus .v { opacity: 0; }
+.faq .a { padding: 32px 32px 32px 96px; color: var(--white); }
+
+/* Posts */
+.post { background: var(--brand); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 24px; filter: drop-shadow(0 6px 3px rgba(0,0,0,.25)); transition: background-color .35s linear; }
+.post:hover { background: #004b39; }
+.post .media { aspect-ratio: 400 / 256; border-radius: 8px; overflow: hidden; }
+.post-text { display: flex; flex-direction: column; gap: 16px; }
+.post h3 { font-size: 24px; line-height: 28px; font-weight: 600; }
+.post .tag { color: var(--mint); }
+
+@media (max-width: 1200px) {
+  .hero { flex-direction: column; }
+  .hero-img { flex: none; }
+  .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-3.posts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .game-body { padding: 24px; }
+}
+@media (max-width: 900px) {
+  .grid-3 { grid-template-columns: minmax(0, 1fr); }
+  .grid-2 { grid-template-columns: minmax(0, 1fr); }
+  .split, .split.reverse { flex-direction: column; min-height: 0; }
+  .split > .media, .split.reverse > .media { order: -1; border-radius: 32px 32px 0 0; aspect-ratio: 691 / 340; flex: none; }
+  .split-copy { padding: 28px 20px 24px; }
+}
+@media (max-width: 760px) {
+  .home main { gap: 56px; padding-block: 32px; }
+  .panel { border-radius: 24px; padding: 6px; }
+  .hero-img, .demo-stage { border-radius: 18px; }
+  .split > .media, .split.reverse > .media { border-radius: 18px 18px 0 0; }
+  .hero-copy { padding: 24px 14px 18px; }
+  .h1, .h1 .en, .h1-en { font-size: 28px; line-height: 34px; }
+  .sub { font-size: 20px; }
+  .ticker-tag { --tip: 16px; width: 124px; font-size: 18px; height: 48px; gap: 8px; }
+  .ticker-tag .dot { width: 7px; height: 7px; }
+  .ticker-view { --tip-gap: 16px; }
+  .ticker-track a { height: 48px; font-size: 14px; padding-left: 20px; }
+  .grid-4 { gap: 16px; }
+  .adv-body { padding: 18px 12px; }
+  .card-title, .feat-title h3 { font-size: 22px; }
+  .demo-copy { padding: 24px 12px; }
+  .faq summary { padding: 18px; gap: 14px; }
+  .faq .q { font-size: 16px; line-height: 22px; }
+  .faq .a { padding: 18px; }
+  .feat { padding: 24px 18px; }
+  .grid-3.posts { grid-template-columns: minmax(0, 1fr); }
+  .post h3 { font-size: 20px; }
+}
+@media (max-width: 520px) { .grid-4 { grid-template-columns: minmax(0, 1fr); } }
+/* Phones: advantage cards in one row that can be swiped sideways */
+@media (max-width: 760px) {
+  .grid-4.swipe { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+    margin-inline: calc(var(--gutter) * -1); padding: 2px var(--gutter) 8px; scroll-padding-inline: var(--gutter); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .grid-4.swipe::-webkit-scrollbar { display: none; }
+  .grid-4.swipe > .adv { flex: 0 0 78%; max-width: 300px; scroll-snap-align: start; }
+}
+
+/* Section pages (優惠列表 / 隨機倍率玩法 / JP真人資訊 / 百家樂技巧 / 關於JP真人) — built on home.css */
+.page main { display: flex; flex-direction: column; gap: 72px; padding-block: 72px; }
+.page main > section { display: flex; flex-direction: column; gap: 32px; }
+.hero .btn-row, .hero-copy > .btn { align-self: flex-start; }
+
+/* Promo banners: same framed panel as the hero, image only */
+.promo-list { display: flex; flex-direction: column; gap: 72px; }
+.promo { --inner-dark: linear-gradient(var(--brand-deep), var(--brand-deep)); border-radius: 40px; padding: 8px; overflow: hidden; }
+.promo img { width: 100%; height: auto; aspect-ratio: 1482 / 448; object-fit: cover; border-radius: 32px; display: block; }
+
+/* Three steps */
+.steps3 { display: flex; align-items: center; gap: 24px; }
+.step-card { flex: 1 1 0; min-width: 0; border: 2px solid var(--mint); border-radius: 28px; overflow: hidden; background: var(--brand-deep); align-self: stretch; display: flex; flex-direction: column; }
+.step-card .media { aspect-ratio: 451 / 205; }
+.step-card .media img { width: 100%; height: 100%; object-fit: cover; }
+.step-card .body { padding: 36px; display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.step-card h3 { font-family: var(--font-en); font-weight: 800; font-size: 28px; line-height: 1.2; color: var(--gold); }
+/* Arrow 16×42, blinks gold ↔ dark (Figma 4218:2097: 0.2s hold + 0.3s smart animate each way) */
+.step-arrow-y { flex: none; width: 16px; height: 42px; fill: var(--gold); animation: step-blink 1s linear infinite; }
+@keyframes step-blink { 0%, 20% { fill: #ffd43b; } 50%, 70% { fill: #032116; } 100% { fill: #ffd43b; } }
+
+/* Rule / feature cards with round icon */
+.icon-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.icon-card { border: 2px solid var(--mint); border-radius: 36px; padding: 32px 48px; display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center; }
+.icon-card.tight { padding-inline: 16px; }
+.icon-card svg { width: 80px; height: 80px; }
+.icon-card h3 { font-size: 24px; line-height: 28px; font-weight: 600; }
+.icon-card .rule { width: 125px; height: 1px; background: var(--gold); }
+
+/* Split with mint border (mechanism / brand) */
+.panel.mint { border-color: var(--mint); }
+.split-copy .h1-en.zh { font-family: var(--font-ch); font-weight: 700; }
+
+/* Trust cards reuse .feat; three columns */
+.grid-3.trust { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@media (max-width: 1200px) {
+  .icon-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .steps3 { flex-direction: column; }
+  .step-card { flex: none; width: 100%; }
+  .step-arrow-y { transform: rotate(90deg); margin-block: -13px; align-self: center; }
+  .step-card h3 .sep { display: none; }
+  .step-card h3 .no, .step-card h3 .name { display: block; }
+  .grid-3.trust { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .page main { gap: 56px; padding-block: 32px; }
+  .promo-list { gap: 24px; }
+  .promo { border-radius: 20px; padding: 4px; }
+  .promo img { border-radius: 16px; }
+  .step-card .body { padding: 28px; }
+  .icon-card { padding: 24px 16px; border-radius: 24px; }
+  .icon-card svg { width: 64px; height: 64px; }
+  .icon-card h3 { font-size: 20px; }
+}
+@media (max-width: 520px) { .icon-cards { grid-template-columns: minmax(0, 1fr); } }
+
+</style></head><body>
+<div class="home page"><header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="JP真人 首頁"><img src="img/logo.svg" alt="JP" width="101" height="48"></a>
+    <a class="btn btn-white head-reg" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="開啟選單"><span class="bars" aria-hidden="true"><span></span><span></span></span></button>
+    <nav class="nav" id="site-nav" aria-label="主選單">
+      <div class="nav-links"><a href="promotions.html">優惠列表</a><a href="random-multiplier.html">隨機倍率玩法</a><a href="jp-info.html">JP真人資訊</a><a href="baccarat-tips.html">百家樂技巧</a><a href="about.html" aria-current="page">關於JP真人</a></div>
+      <a class="btn btn-white" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a>
+    </nav>
+  </div>
+</header>
+<main id="top">
+  <section class="wrap hero-stack" aria-label="關於JP真人">
+    <div class="panel hero shine shine-game">
+      <div class="hero-img"><img src="img/x88e7b337fb.jpg" alt="JP LIVE 真人荷官" width="850" height="448" fetchpriority="high"></div>
+      <div class="hero-copy">
+        <div class="copy-block">
+          <h1 class="h1">關於JP真人</h1>
+          <p class="sub">經典百家樂全新進化，真人娛樂新體驗</p>
+          <p>JP真人由深耕亞洲真人娛樂市場的專業團隊打造，以「經典玩法 × 創新娛樂」為核心，在保留傳統百家樂規則的基礎上，融入更多驚喜與互動體驗，打造全新的真人娛樂模式。不僅重視直播品質與遊戲體驗，更以「Jackpot Potential」為品牌理念，象徵每場牌局都充滿期待。新手玩家也能透過JP真人試玩，輕鬆熟悉平台操作、遊戲規則與特色，享受更豐富的真人百家樂娛樂體驗。</p>
+        </div>
+        <a class="btn btn-white" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a>
+      </div>
+    </div>
+    <div class="ticker">
+      <div class="ticker-tag"><span class="dot" aria-hidden="true"></span><span>最新消息</span></div>
+      <div class="ticker-view"><div class="ticker-track"><a href="article.html"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.47" fill="#FFD43B"/><circle cx="8.5" cy="8.5" r="8" stroke="#FFD43B"/></svg><span>百家樂試玩怎麼玩？真人百家樂規則、百家試玩步驟與JP百家樂特色</span></a><a href="article-2.html"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.47" fill="#FFD43B"/><circle cx="8.5" cy="8.5" r="8" stroke="#FFD43B"/></svg><span>MT真人荷官回歸竟不發牌？MT百家樂試玩與JP真人試玩教學</span></a><a href="article-3.html"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.47" fill="#FFD43B"/><circle cx="8.5" cy="8.5" r="8" stroke="#FFD43B"/></svg><span>MT荷官不發牌了？MT荷官消失後改真人直播，JP真人百家樂試玩比較</span></a><a href="article.html"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.47" fill="#FFD43B"/><circle cx="8.5" cy="8.5" r="8" stroke="#FFD43B"/></svg><span>百家樂試玩怎麼玩？真人百家樂規則、百家試玩步驟與JP百家樂特色</span></a><a href="article-2.html"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.47" fill="#FFD43B"/><circle cx="8.5" cy="8.5" r="8" stroke="#FFD43B"/></svg><span>MT真人荷官回歸竟不發牌？MT百家樂試玩與JP真人試玩教學</span></a><a href="article-3.html"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.47" fill="#FFD43B"/><circle cx="8.5" cy="8.5" r="8" stroke="#FFD43B"/></svg><span>MT荷官不發牌了？MT荷官消失後改真人直播，JP真人百家樂試玩比較</span></a></div></div>
+    </div>
+  </section>
+  <section class="wrap" id="features"><div class="sec-head"><div class="icon-box bare"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true"><rect x="1" y="1" width="40" height="40" rx="8" stroke="#35A495" stroke-width="2"/><path d="M31.7698 14.399C29.6716 10.3365 23.3974 9.64868 21 13.7985C18.6034 9.64868 12.3293 10.3357 10.2302 14.399C8.19257 18.3448 10.781 22.6928 13.5553 25.5534C15.4071 27.4633 17.5726 29.054 19.8251 30.4734C20.3802 30.8228 20.6939 30.9966 21 31C21.3061 30.9958 21.6198 30.8228 22.1749 30.4734C24.4274 29.054 26.5929 27.4633 28.4447 25.5534C31.219 22.6928 33.8074 18.3448 31.7698 14.399Z" fill="#FFD43B"/></svg></div><div class="sec-titles"><h2>JP真人四大特色</h2><p class="en">JP Live Features</p></div></div>
+    <div class="icon-cards"><article class="icon-card tight"><svg aria-hidden="true" width="84" height="84" viewBox="0 0 84 84" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M58.3034 54.319H25.6148C24.9931 54.319 24.4883 54.8237 24.4883 55.4455V58.7466C24.4883 59.3684 24.9931 59.8732 25.6148 59.8732H58.3034C58.9252 59.8732 59.43 59.3684 59.43 58.7466V55.4455C59.4283 54.8221 58.9252 54.319 58.3034 54.319Z" fill="#FFD43B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M62.1753 29.07C60.305 29.07 58.7873 30.586 58.7873 32.458C58.7873 33.2235 59.0447 33.9289 59.4742 34.4972L51.9393 40.1835L43.6004 31.5103C44.8173 30.9955 45.6697 29.7921 45.6697 28.388C45.6697 26.5177 44.1537 25 42.2817 25C40.4113 25 38.8936 26.516 38.8936 28.388C38.8936 29.7921 39.7477 30.9955 40.9629 31.5103L32.624 40.1835L25.0891 34.4972C25.5187 33.9289 25.7761 33.2252 25.7761 32.458C25.7761 30.5877 24.2601 29.07 22.388 29.07C20.5177 29.07 19 30.586 19 32.458C19 34.3284 20.516 35.8461 22.388 35.8461C22.5953 35.8461 22.7992 35.8243 22.9964 35.7892L25.7627 52.4185C25.7945 52.4185 25.8279 52.4168 25.8596 52.4168H58.7004C58.7338 52.4168 58.7655 52.4168 58.7973 52.4185L61.5635 35.7892C61.7608 35.8243 61.9647 35.8461 62.172 35.8461C64.0423 35.8461 65.56 34.33 65.56 32.458C65.5617 30.586 64.0457 29.07 62.1753 29.07Z" fill="#FFD43B"/><circle cx="42" cy="42" r="40" stroke="#FFD43B" stroke-width="4"/></svg><h3>經典玩法</h3><span class="rule" aria-hidden="true"></span><p>延續百家樂經典規則<br>呈現最純粹的遊戲魅力</p></article><article class="icon-card tight"><svg aria-hidden="true" width="84" height="84" viewBox="0 0 84 84" fill="none"><path d="M61.5899 37.3883C61.0094 36.5545 60.6553 35.5375 60.5523 34.4608C60.0644 29.2954 57.563 24.6386 53.5259 21.3446C49.4887 18.0609 44.3954 16.556 39.1785 17.1139C30.8406 18.0197 23.0215 25.8285 22.1157 34.1767C21.5557 39.373 23.0401 44.456 26.3155 48.4829C28.1149 50.7001 29.1113 53.5865 29.1216 56.5964L29.1319 64.7922C29.1319 65.3522 29.5889 65.8092 30.1489 65.8092H52.5088C53.0688 65.8092 53.5259 65.3522 53.5259 64.7922V58.6922C53.5259 58.1322 53.9829 57.6751 54.5429 57.6751H57.5939C59.2718 57.6751 60.645 56.302 60.645 54.6241V47.7191C60.645 46.8235 61.2152 46.0412 62.0676 45.7777L63.3275 45.3804C64.0604 45.156 64.6183 44.6186 64.8633 43.896C65.1166 43.1734 65.0157 42.4014 64.5792 41.7714L61.5899 37.3883Z" fill="#FFD43B"/><circle cx="42" cy="42" r="40" stroke="#FFD43B" stroke-width="4"/></svg><h3>創新體驗</h3><span class="rule" aria-hidden="true"></span><p>不斷優化遊戲內容<br>帶來更多元的玩法與驚喜</p></article><article class="icon-card tight"><svg aria-hidden="true" width="84" height="84" viewBox="0 0 84 84" fill="none"><path d="M33.7813 38.586C39.4645 38.586 44.0742 33.9784 44.0742 28.293C44.0742 22.6076 39.4666 18 33.7813 18C28.098 18 23.4883 22.6076 23.4883 28.293V28.2951C23.4945 33.9784 28.1001 38.5818 33.7813 38.586Z" fill="#FFD43B"/><path d="M47.2449 47.089C40.0014 39.6575 28.1043 39.5071 20.6728 46.7527C17.0469 50.2867 15.0021 55.1345 15 60.1996C15 61.1938 15.8062 62 16.8004 62H50.7644C51.7586 62 52.5648 61.1938 52.5648 60.1996C52.5711 58.2905 52.2766 56.3919 51.6917 54.5727C50.8208 51.7613 49.296 49.1964 47.2449 47.089Z" fill="#FFD43B"/><path d="M60.9314 37.2441C63.92 34.2555 63.92 29.41 60.9314 26.4214C57.9427 23.4328 53.0972 23.4328 50.1086 26.4214C47.12 29.41 47.12 34.2555 50.1086 37.2441C53.0972 40.2327 57.9427 40.2327 60.9314 37.2441Z" fill="#FFD43B"/><path d="M55.521 41.5936C53.1065 41.602 50.7401 42.2599 48.666 43.4964C49.0566 43.8452 49.4514 44.1898 49.8211 44.5679C52.2732 47.0889 54.0945 50.153 55.1367 53.5116C55.4939 54.6165 55.7571 55.7507 55.9242 56.9015H67.226C68.2202 56.9015 69.0264 56.0953 69.0264 55.1011C69.018 47.6445 62.9755 41.602 55.521 41.5936Z" fill="#FFD43B"/><circle cx="42" cy="42" r="40" stroke="#FFD43B" stroke-width="4"/></svg><h3>真人互動</h3><span class="rule" aria-hidden="true"></span><p>即時連線真實遊戲場景<br>享受沉浸式娛樂體驗</p></article><article class="icon-card tight"><svg aria-hidden="true" width="84" height="84" viewBox="0 0 84 84" fill="none"><path d="M62.4101 47.0818C61.8908 49.2746 61.028 51.3593 59.8466 53.2741L61.6283 57.2949L56.8933 62.0299L52.8725 60.2425C50.9577 61.4238 48.873 62.2867 46.6879 62.8059L45.1089 66.9136H38.4108L36.826 62.8059C34.6409 62.2867 32.5562 61.4238 30.6414 60.2425L26.6186 62.0299L21.8836 57.293L23.6711 53.2722C22.4897 51.3574 21.6269 49.2727 21.1019 47.0798L17 45.5009V42.4568V39.4108L21.1019 37.8318C21.6288 35.639 22.4917 33.5543 23.6711 31.6395L21.8836 27.6187L26.6186 22.8837L30.6394 24.6711C32.5543 23.4898 34.639 22.6269 36.8241 22.1077L38.4088 18H45.107L46.6859 22.1077C48.871 22.6269 50.9557 23.4898 52.8706 24.6711L56.8914 22.8837L61.6264 27.6187L59.8447 31.6395C61.0261 33.5543 61.8889 35.639 62.4081 37.8318L66.51 39.4108V42.4568V45.5028L62.4101 47.0818ZM41.756 28.9042C34.2027 28.9042 28.0721 34.9422 27.9119 42.4568C28.0721 49.9714 34.2027 56.0094 41.756 56.0094C49.3092 56.0094 55.4475 49.9714 55.6077 42.4568C55.4475 34.9422 49.3092 28.9042 41.756 28.9042Z" fill="#FFD43B"/><circle cx="42" cy="42" r="40" stroke="#FFD43B" stroke-width="4"/></svg><h3>流暢操作</h3><span class="rule" aria-hidden="true"></span><p>穩定的系統與直覺化介面<br>讓每一次遊戲都更加順暢</p></article></div></section>
+  <section class="wrap" id="brand"><div class="sec-head"><div class="icon-box bare"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true"><rect x="1" y="1" width="40" height="40" rx="8" stroke="#35A495" stroke-width="2"/><path d="M28.3154 14.4081C26.4959 12.5118 24.3681 10.9327 22.1538 9.52294C21.6087 9.17587 21.2995 9.00374 20.9997 9C20.699 9.00374 20.3907 9.17587 19.8456 9.52294C17.6313 10.9327 15.5045 12.5118 13.684 14.4081C10.9575 17.2492 8.41431 21.5664 10.4171 25.4833C12.3485 29.2618 17.8794 30.1 20.5082 26.8052C18.9405 30.8951 16.839 32.9963 16.839 32.9963H16.8428L16.839 33H25.1613C25.1613 33 23.0552 30.8942 21.4847 26.7968C24.1106 30.1019 29.65 29.2655 31.5833 25.4833C33.5861 21.5655 31.0429 17.2482 28.3164 14.4081H28.3154Z" fill="#FFD43B"/></svg></div><div class="sec-titles"><h2>品牌理念</h2><p class="en">Brand Philosophy</p></div></div>
+    <div class="panel split mint">
+      <div class="media"><img src="img/x14102ef5d4.jpg" alt="JP 真人百家 感受每一刻" loading="lazy" width="691" height="340"></div>
+      <div class="split-copy"><div class="copy-block"><h3 class="h1-en zh">經典傳承並創新無限可能</h3><p>JP真人秉持「經典玩法 × 創新娛樂」的品牌理念，致力於突破傳統真人百家樂的娛樂框架。結合專業真人荷官、高畫質直播技術與獨特的隨機倍率機制，在保留經典遊戲規則的同時，創造更多元的互動體驗。以 Jackpot Potential 為品牌精神，讓每一場牌局不只是結果，更是一段充滿期待與驚喜的娛樂旅程。</p></div><a class="btn btn-white" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a></div>
+    </div></section>
+  <section class="wrap" id="trust"><div class="sec-head"><div class="icon-box bare"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true"><rect x="1" y="1" width="40" height="40" rx="8" fill="#003F30"/><rect x="1" y="1" width="40" height="40" rx="8" stroke="#35A495" stroke-width="2"/><path d="M21 8.5C19.8673 9.75159 15.9244 12.4922 10.0002 11.9677V20.6819C9.98513 23.248 10.8968 25.7343 12.5667 27.6858C14.6317 30.067 17.472 32.0204 21 33.5C24.528 32.0214 27.3673 30.067 29.4333 27.6858C31.1032 25.7334 32.0149 23.248 31.9998 20.6819V11.9677C26.0718 12.4922 22.1327 9.75159 21 8.5Z" fill="#FFD43B"/></svg></div><div class="sec-titles"><h2>JP真人三大安心保障</h2><p class="en">JP Live Trust &amp; Support</p></div></div>
+    <div class="grid-3 trust"><article class="feat shine shine-dark"><div class="feat-title"><h3>遊戲公平保障</h3></div><p>採用先進技術與專業監控機制，重視每一局的公平與透明。透過清楚的規則說明與即時牌局資訊，讓玩家了解遊戲流程，享受更安心的娛樂體驗。</p></article><article class="feat shine shine-dark"><div class="feat-title"><h3>個人資料保護</h3></div><p>重視每位用戶的隱私與資料安全，透過加密傳輸與權限管理，妥善保護個人資訊。從帳號登入到平台操作，持續完善防護措施，讓您使用更放心。</p></article><article class="feat shine shine-dark"><div class="feat-title"><h3>百家專業客服</h3></div><p>提供即時、親切的客服支援，從平台操作、遊戲規則到帳號相關問題，都能獲得清楚易懂的說明。用心回應每一項需求，陪您順暢體驗各項服務。</p></article></div></section>
+  <section class="wrap" id="faq"><div class="sec-head center"><div class="icon-box bare"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true"><rect x="1" y="1" width="40" height="40" rx="8" stroke="#35A495" stroke-width="2"/><path d="M26.3545 28.8936V29.6329C26.3545 32.5967 23.9568 34.9999 21 35.0001C18.0431 35.0001 15.6455 32.5968 15.6455 29.6329V28.8936H26.3545ZM11 17.0196C11.0001 10.9977 16.2196 6.38518 22.1533 7.06744C26.5886 7.56889 30.255 11.1272 30.8955 15.5381C31.3259 18.5369 30.4168 21.536 28.415 23.753C27.6438 24.6065 27.0802 25.5645 26.7373 26.5596H15.2764C14.9439 25.5707 14.3949 24.6324 13.6426 23.8106C11.932 21.9669 11 19.5519 11 17.0196Z" fill="#FFD43B"/></svg></div><div class="sec-titles"><h2>JP真人百家樂常見問題</h2><p class="en semi">JP真人百家樂、JP真人試玩、JP百家樂試玩等常見問題，快速了解玩法特色、遊戲規則與平台資訊。</p></div></div>
+    <div class="faq-list"><details class="faq"><summary><span class="num">01</span><span class="q">JP真人適合第一次接觸真人百家樂的新手嗎？</span><svg class="plus" width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle opacity="0.2" cx="20" cy="20" r="19.5" fill="white" stroke="white"/><circle cx="20" cy="20" r="19.5" stroke="white"/><rect x="8.25" y="20.25" width="23.5" height="0.5" fill="white" stroke="white" stroke-width="0.5"/><rect class="v" x="20.75" y="9.25" width="23.5" height="0.5" transform="rotate(90 20.75 9.25)" fill="white" stroke="white" stroke-width="0.5"/></svg></summary><p class="a">JP真人提供直覺化操作介面與完整真人直播畫面，新手可先透過JP真人試玩熟悉操作流程，再了解JP真人百家樂規則及JP真人百家投注方式，能降低第一次操作的學習門檻。</p></details><details class="faq"><summary><span class="num">02</span><span class="q">JP真人百家樂與一般JP真人百家有什麼差異？</span><svg class="plus" width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle opacity="0.2" cx="20" cy="20" r="19.5" fill="white" stroke="white"/><circle cx="20" cy="20" r="19.5" stroke="white"/><rect x="8.25" y="20.25" width="23.5" height="0.5" fill="white" stroke="white" stroke-width="0.5"/><rect class="v" x="20.75" y="9.25" width="23.5" height="0.5" transform="rotate(90 20.75 9.25)" fill="white" stroke="white" stroke-width="0.5"/></svg></summary><p class="a">JP真人百家樂是JP真人百家最受歡迎的玩法之一，主要以真人荷官發牌並比較莊、閒點數；而JP真人百家則泛指百家類遊戲內容，不同桌台可能提供不同投注限額、附加玩法及介面配置。</p></details><details class="faq"><summary><span class="num">03</span><span class="q">開始JP真人試玩前需要注意哪些事項？</span><svg class="plus" width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle opacity="0.2" cx="20" cy="20" r="19.5" fill="white" stroke="white"/><circle cx="20" cy="20" r="19.5" stroke="white"/><rect x="8.25" y="20.25" width="23.5" height="0.5" fill="white" stroke="white" stroke-width="0.5"/><rect class="v" x="20.75" y="9.25" width="23.5" height="0.5" transform="rotate(90 20.75 9.25)" fill="white" stroke="white" stroke-width="0.5"/></svg></summary><p class="a">體驗JP真人試玩前，建議先確認桌台規則、投注限額、補牌規則及介面功能，並利用試玩熟悉JP真人百家樂的投注流程與JP真人百家操作方式，再評估是否進一步體驗正式模式。</p></details><details class="faq"><summary><span class="num">04</span><span class="q">如何快速熟悉JP真人百家樂投注流程？</span><svg class="plus" width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle opacity="0.2" cx="20" cy="20" r="19.5" fill="white" stroke="white"/><circle cx="20" cy="20" r="19.5" stroke="white"/><rect x="8.25" y="20.25" width="23.5" height="0.5" fill="white" stroke="white" stroke-width="0.5"/><rect class="v" x="20.75" y="9.25" width="23.5" height="0.5" transform="rotate(90 20.75 9.25)" fill="white" stroke="white" stroke-width="0.5"/></svg></summary><p class="a">建議先從莊家、閒家等基本玩法開始，透過JP真人試玩觀察發牌、補牌及結算流程，再逐步了解和局、對子等JP真人百家投注項目，有助於提升對JP真人介面與玩法的熟悉度。</p></details><details class="faq"><summary><span class="num">05</span><span class="q">使用JP真人時，如何建立正確的遊戲觀念？</span><svg class="plus" width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle opacity="0.2" cx="20" cy="20" r="19.5" fill="white" stroke="white"/><circle cx="20" cy="20" r="19.5" stroke="white"/><rect x="8.25" y="20.25" width="23.5" height="0.5" fill="white" stroke="white" stroke-width="0.5"/><rect class="v" x="20.75" y="9.25" width="23.5" height="0.5" transform="rotate(90 20.75 9.25)" fill="white" stroke="white" stroke-width="0.5"/></svg></summary><p class="a">體驗JP真人時，建議先設定娛樂預算，避免追注或依賴路單判斷結果，並透過JP真人試玩熟悉JP真人百家樂規則及JP真人百家玩法，以理性態度了解平台功能與各項遊戲內容。</p></details></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="licences">
+      <img src="img/pagcor.png" alt="PAGCOR" width="230" height="67">
+      <img src="img/mga.png" alt="Malta Gaming Authority" width="274" height="55">
+      <img src="img/fsc.png" alt="British Virgin Islands Financial Services Commission" width="283" height="68">
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col"><h4>遊戲聲明</h4><ul><li><a href="terms.html#disclaimer">免責聲明</a></li><li><a href="terms.html#terms">服務條款</a></li><li><a href="terms.html#privacy">隱私權政策</a></li><li><a href="terms.html#responsible">責任娛樂</a></li><li><a href="terms.html#contact">聯絡我們</a></li></ul></div>
+      <div class="foot-col"><h4>JP真人教學</h4><ul><li><a href="random-multiplier.html">隨機倍率玩法</a></li><li><a href="baccarat-tips.html">百家樂技巧</a></li><li><a href="jp-info.html">JP真人資訊</a></li><li><a href="article.html">百家樂玩法</a></li><li><a href="about.html">關於JP真人</a></li></ul></div>
+      <div class="stores"><a href="#" aria-label="Google Play 下載"><img src="img/gplay.png" alt="GET IT ON Google Play" width="120" height="40"></a><a href="#" aria-label="App Store 下載"><img src="img/appstore.png" alt="Download on the App Store" width="120" height="40"></a></div>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="to-top" type="button" aria-label="回到頂端"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true"><circle cx="30" cy="30" r="30" fill="#FFD43B"/><path d="M10.6152 38.7692L30.2306 20.7692L49.846 38.7692" stroke="#003F30" stroke-width="6"/></svg></button>
+<script>
+(function(){
+  var t=document.getElementById('nav-toggle'), n=document.getElementById('site-nav');
+  if(t&&n){ t.addEventListener('click',function(){ var o=n.classList.toggle('open'); t.setAttribute('aria-expanded',o?'true':'false'); t.setAttribute('aria-label',o?'關閉選單':'開啟選單'); });
+    n.addEventListener('click',function(e){ if(e.target.closest('a')){ n.classList.remove('open'); t.setAttribute('aria-expanded','false'); t.setAttribute('aria-label','開啟選單'); } }); }
+  var tr=document.querySelector('.ticker-track');
+  function setDur(){ if(tr){ tr.style.setProperty('--ticker-dur', (tr.scrollWidth/2/100).toFixed(2)+'s'); } }
+  setDur(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(setDur); window.addEventListener('resize', setDur);
+  // Every page opens at the top (unless the link targets an anchor)
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+  if(!location.hash) window.scrollTo(0,0);
+  // Back-to-top button (Figma 4213:10029)
+  var up=document.getElementById('to-top');
+  if(up){ var tick=function(){ up.classList.toggle('show', window.scrollY>400); };
+    window.addEventListener('scroll', tick, {passive:true}); tick();
+    up.addEventListener('click', function(){ window.scrollTo({top:0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}); }); }
+})();
+</script></div>
+</body></html>

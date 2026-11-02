@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>百家樂試玩怎麼玩</title>
+<meta name="description" content="JP百家樂 試玩怎麼玩？完整解析 真人百家樂 規則、百家試玩 操作教學、點數計算、派彩方式與常見玩法，帶你了解 百家樂試玩 流程、JP真人百家 特色、遊戲介面及免費試玩注意事項，新手也能快速掌握玩法與操作重點。">
+<link rel="icon" href="img/favicon.ico" sizes="48x48"><link rel="icon" href="img/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"><meta name="theme-color" content="#032116"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+/* JP Live — shared styles. Tokens come from the Figma file's styles (品牌主色 / 品牌深色 / 品牌輔色 / 品牌亮色 / 品牌副輔色). */
+:root {
+  --brand: #003f30;      /* 品牌主色 */
+  --brand-deep: #032116; /* 品牌深色 */
+  --brand-mid: #26776c;  /* 品牌輔色 */
+  --brand-bright: #00ad90; /* 品牌亮色 */
+  --mint: #35a495;
+  --gold: #ffd43b;       /* 品牌副輔色 */
+  --gold-edge: #fff156;
+  --ink: #000;
+  --ink-soft: #333;
+  --white: #fff;
+  --paper: #fafcfb;
+  --font-ch: "Noto Sans TC", "Noto Sans", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-en: "Inter", "Noto Sans TC", system-ui, sans-serif;
+  --gutter: 56px;
+  --maxw: 1610px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body { margin: 0; font-family: var(--font-ch); font-size: 16px; line-height: 24px; font-weight: 400; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+p { margin: 0; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
+
+.wrap { width: 100%; max-width: var(--maxw); margin-inline: auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+
+/* ---------- Buttons (190 x 50 everywhere; hover states from the Figma UI page) ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 50px; width: 190px; flex: none;
+  border-radius: 80px; border: 1px solid var(--white); font-weight: 400; font-size: 16px; line-height: 24px;
+  white-space: nowrap; cursor: pointer; transition: background-color .3s linear, color .3s linear, border-color .3s linear, box-shadow .3s linear; }
+.btn-white { background: var(--white); color: var(--brand); }
+.btn-white:hover { background: var(--mint); border-color: var(--brand-bright); color: var(--white); transition-duration: .35s; }
+.btn-green { background: var(--brand); color: var(--white); }
+.btn-green:hover { background: var(--white); border-color: var(--brand-bright); color: var(--brand); }
+.btn-ghost { background: transparent; color: var(--white); width: 136px; }
+.btn-ghost:hover { background: var(--white); color: var(--brand-deep); }
+.btn-gold { background: var(--gold); color: var(--brand); border-color: var(--gold-edge); }
+.btn-gold:hover { box-shadow: 0 0 20px #ffe100; }
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ---------- Header ---------- */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+  background: linear-gradient(to bottom, #000604 0%, var(--brand-deep) 61%); border-bottom: 1px solid var(--white); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: #000604; }
+.site-header .wrap { height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo img { width: 101px; height: 48px; }
+.nav { display: flex; align-items: center; }
+.nav-links { display: flex; }
+.nav-links a { width: 160px; height: 50px; padding: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  color: var(--white); font-weight: 400; position: relative; }
+.nav-links a::after { content: ""; width: 58px; height: 2px; background: transparent; transition: background-color .35s linear; }
+.nav-links a:hover::after, .nav-links a[aria-current="page"]::after { background: var(--white); }
+.head-reg { display: none; }
+.nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.5); border-radius: 10px; background: transparent; color: var(--white); cursor: pointer; align-items: center; justify-content: center; }
+.nav-toggle .bars { position: relative; width: 20px; height: 12px; display: block; }
+.nav-toggle .bars span { position: absolute; left: 0; width: 100%; height: 2px; border-radius: 2px; background: currentColor; transition: top .25s ease, transform .25s ease; }
+.nav-toggle .bars span:first-child { top: 0; }
+.nav-toggle .bars span:last-child { top: 10px; }
+.nav-toggle[aria-expanded="true"] .bars span { top: 5px; }
+.nav-toggle[aria-expanded="true"] .bars span:first-child { transform: rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .bars span:last-child { transform: rotate(-45deg); }
+@media (prefers-reduced-motion: reduce) { .nav-toggle .bars span { transition: none; } }
+
+@media (max-width: 1280px) { .nav-links a { width: auto; min-width: 88px; padding-inline: 14px; } }
+@media (max-width: 1040px) {
+  .nav-toggle { display: inline-flex; }
+  .nav { position: absolute; top: 100%; left: 0; right: 0; background: var(--brand-deep); border-bottom: 1px solid var(--brand-mid);
+    flex-direction: column; align-items: stretch; padding: 8px max(16px, env(safe-area-inset-right, 0px)) 20px max(16px, env(safe-area-inset-left, 0px)); gap: 12px; }
+  .nav:not(.open) { display: none; }
+  .nav-links { flex-direction: column; }
+  .nav-links a { width: 100%; height: 48px; align-items: center; text-align: center; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .nav > .btn { display: none; }
+  .head-reg { display: inline-flex; margin-left: auto; width: auto; height: 44px; padding: 0 20px; font-size: 14px; }
+  .nav-links a::after { display: none; }
+}
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--white); background: linear-gradient(to top, #000604 0%, var(--brand-deep) 61%); color: var(--white); }
+.site-footer .wrap { padding-block: 60px; display: flex; gap: 60px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.licences { display: flex; gap: 60px; align-items: center; flex-wrap: wrap; justify-content: center; }
+.licences img { height: auto; }
+.foot-cols { display: flex; gap: 16px; align-items: flex-start; }
+.foot-col { width: 109px; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.foot-col h4 { font-size: 16px; font-weight: 400; line-height: 24px; }
+.foot-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.foot-col a { display: block; padding: 4px 8px; font-size: 12px; line-height: 15px; text-align: center; transition: opacity .35s linear; }
+.foot-col a:hover { opacity: .5; }
+.stores { display: flex; flex-direction: column; gap: 8px; width: 120px; }
+.stores img { width: 120px; height: 40px; }
+@media (max-width: 760px) {
+  .site-footer .wrap { gap: 36px; padding-block: 40px; }
+  .licences { gap: 24px 32px; }
+  .licences img { transform: scale(.82); }
+  .foot-cols { flex-wrap: wrap; justify-content: center; }
+}
+
+/* ---------- Section heading (icon box + zh/en titles) ---------- */
+.sec-head { display: flex; gap: 24px; align-items: center; }
+.sec-head.center { flex-direction: column; text-align: center; }
+.icon-box { flex: none; width: 40px; height: 40px; border: 2px solid var(--white); border-radius: 8px; display: grid; place-items: center; }
+.icon-box svg { display: block; }
+.icon-box.bare { border: 0; width: 42px; height: 42px; }
+.sec-titles { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.sec-titles h2 { font-size: 38px; line-height: 42px; font-weight: 700; }
+.sec-titles .en { font-family: var(--font-en); font-weight: 300; font-size: 24px; line-height: 1.1; }
+.sec-titles .en.semi { font-family: var(--font-ch); font-weight: 400; font-size: 16px; line-height: 24px; } /* Body style (Figma 4193:2211) */
+
+@media (max-width: 760px) {
+  :root { --gutter: 16px; }
+  .sec-titles h2 { font-size: 28px; line-height: 34px; }
+  .sec-titles .en { font-size: 18px; }
+  .sec-titles { gap: 10px; }
+}
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Back to top (Figma 4213:10029) */
+.to-top { position: fixed; right: max(24px, env(safe-area-inset-right, 0px) + 16px); bottom: max(24px, env(safe-area-inset-bottom, 0px) + 16px); z-index: 60;
+  width: 60px; height: 60px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,.3)); opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity .3s linear, visibility .3s linear, transform .3s ease, filter .3s linear; }
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { transform: translateY(-3px); filter: drop-shadow(0 6px 10px rgba(0,0,0,.4)) brightness(1.05); }
+.to-top:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.to-top svg { display: block; }
+@media (max-width: 760px) { .to-top, .to-top svg { width: 48px; height: 48px; } }
+
+/* Phones: button rows sit side by side and centred; single buttons are centred */
+@media (max-width: 760px) {
+  .btn-row { justify-content: center; flex-wrap: nowrap; align-self: stretch !important; }
+  .btn-row .btn { flex: 1 1 0; min-width: 0; max-width: 190px; }
+  .hero-copy > .btn, .split-copy > .btn { align-self: center !important; }
+  .game-body .btn { margin-inline: auto; }
+}
+
+/* Article: single light look, as in the Figma frame (4106:794) */
+:root { color-scheme: light; }
+body { background: var(--paper); color: var(--ink); }
+.crumbs { background: #f6f6f6; border-bottom: 1px solid #d9d9d9; }
+.crumbs ol { list-style: none; margin: 0; height: 60px; display: flex; align-items: center; gap: 12px; padding-block: 0; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+.crumbs li { display: flex; align-items: center; gap: 12px; }
+.crumbs a { color: var(--brand); transition: color .35s linear; }
+.crumbs a:hover { color: var(--mint); }
+.crumbs [aria-current] { color: var(--ink-soft); }
+
+.layout { display: flex; gap: 56px; align-items: flex-start; padding-block: 72px; }
+.article { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 32px; }
+.rule { flex: none; width: 1px; align-self: stretch; background: var(--brand); }
+.aside { flex: none; width: 300px; display: flex; flex-direction: column; gap: 45px; align-items: center; }
+.aside .ad { width: 300px; border-radius: 24px; overflow: hidden; }
+.aside .ad img { width: 100%; height: auto; }
+.cats { display: flex; flex-direction: column; gap: 16px; text-align: center; width: 100%; }
+.cats h2 { font-size: 28px; line-height: 34px; font-weight: 600; }
+.cats a { color: var(--mint); font-size: 20px; line-height: 28px; font-weight: 500; transition: color .35s linear; }
+.cats a:hover { color: var(--brand); }
+
+.art-head { display: flex; flex-direction: column; gap: 16px; }
+.art-head h1 { font-size: 38px; line-height: 42px; font-weight: 700; text-wrap: pretty; }
+.art-head h1 .seg { display: inline-block; }
+.byline { color: var(--brand); font-size: 12px; line-height: 15px; }
+.lede, .article p { font-size: 16px; line-height: 24px; }
+
+.toc { background: #f4f4f4; border: 1px solid #b3b3b3; padding: 24px; display: flex; flex-direction: column; gap: 8px; }
+.toc-title { font-size: 16px; line-height: 24px; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 24px; }
+.toc ol ol { padding-left: 24px; margin-top: 8px; }
+.toc a { transition: color .35s linear; }
+.toc a:hover { color: var(--mint); }
+
+.block { display: flex; flex-direction: column; gap: 16px; }
+.block.cta { gap: 24px; align-items: center; }
+.block.cta > :not(.btn) { align-self: stretch; }
+.article h2, .article h3 { scroll-margin-top: 120px; }
+.block h2 { font-size: 38px; line-height: 42px; font-weight: 700; }
+.block h3 { font-size: 28px; line-height: 34px; font-weight: 600; }
+.block h4 { font-size: 20px; line-height: 34px; font-weight: 600; color: var(--brand); }
+.block img { width: 100%; height: auto; }
+.block img.banner { border-radius: 24px; }
+.step-label { background: var(--brand); color: var(--white); text-align: center; padding: 8px; border: 1px solid #ccc; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 16px; }
+.steps li { flex: 1 1 0; min-width: 0; background: var(--brand); color: var(--white); border: 1px solid #ccc; padding: 8px; text-align: center; }
+.step-arrow { flex: none; }
+.article a:not(.btn) { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.article .toc a { text-decoration: none; }
+.icon-180 { width: 180px; height: 180px; margin-inline: auto; }
+
+.tbl-wrap { width: 100%; overflow-x: auto; }
+.tbl { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 16px; line-height: 24px; text-align: center; }
+.tbl.wide { min-width: 640px; }
+.tbl th, .tbl td { border: 1px solid #ccc; padding: 8px; }
+.tbl thead th { background: var(--brand); color: var(--white); font-weight: 400; }
+.tbl tbody th { background: #d8e2e0; color: var(--brand); font-weight: 400; }
+.tbl tbody td { background: var(--white); }
+.tbl tbody th.k-dark { background: var(--brand); color: var(--white); }
+.tbl thead th[colspan] { font-weight: 400; }
+
+.cta { display: flex; flex-direction: column; gap: 24px; align-items: center; }
+.cta img { border-radius: 24px; width: 100%; height: auto; }
+
+.related { display: flex; flex-direction: column; gap: 32px; padding-bottom: 72px; }
+.related-head { text-align: center; color: #1a1a1a; display: flex; flex-direction: column; gap: 16px; }
+.related-head h2 { font-size: 38px; line-height: 42px; font-weight: 700; }
+.related-head p { font-family: var(--font-en); font-weight: 300; font-size: 24px; line-height: 1.1; }
+.rel-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.rel { border: 1px solid #b3b3b3; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 24px; background: var(--paper); }
+.rel .media { aspect-ratio: 400 / 256; border-radius: 8px; overflow: hidden; }
+.rel .media img { width: 100%; height: 100%; object-fit: cover; }
+.rel h3 { color: #1a1a1a; font-size: 24px; line-height: 28px; font-weight: 600; }
+.rel .tag { color: var(--mint); }
+
+@media (max-width: 1200px) {
+  .layout { flex-direction: column; gap: 48px; }
+  .rule { width: auto; height: 1px; }
+  .aside { position: static; width: 100%; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 32px; }
+  .aside .cats { order: -1; flex: 1 1 100%; }
+  .rel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .crumbs ol { height: 48px; font-size: 14px; gap: 8px; }
+  .crumbs li { gap: 8px; }
+  .layout { padding-block: 32px; }
+  .art-head h1, .block h2, .related-head h2 { font-size: 26px; line-height: 34px; }
+  .cats h2 { font-size: 24px; line-height: 30px; }
+  .block h3, .block h4 { font-size: 21px; line-height: 28px; }
+  .toc { padding: 18px; }
+  .toc ol { font-size: 15px; line-height: 22px; }
+  .cats a { font-size: 17px; line-height: 24px; }
+  .aside .ad { width: 100%; max-width: 300px; }
+  .rel-grid { grid-template-columns: minmax(0, 1fr); }
+  .rel h3 { font-size: 20px; }
+  .related-head p { font-size: 18px; }
+  .tbl { font-size: 14px; line-height: 22px; }
+  .steps { flex-direction: column; align-items: stretch; gap: 8px; }
+  .step-arrow { align-self: center; transform: rotate(90deg); width: 14px; height: 18px; }
+}
+.block > *, .article > *, .layout > * { min-width: 0; max-width: 100%; }
+@media (max-width: 1200px) { .article { width: 100%; flex: none; } }
+
+</style></head><body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="JP真人 首頁"><img src="img/logo.svg" alt="JP" width="101" height="48"></a>
+    <a class="btn btn-white head-reg" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="開啟選單"><span class="bars" aria-hidden="true"><span></span><span></span></span></button>
+    <nav class="nav" id="site-nav" aria-label="主選單">
+      <div class="nav-links"><a href="promotions.html">優惠列表</a><a href="random-multiplier.html">隨機倍率玩法</a><a href="jp-info.html" aria-current="page">JP真人資訊</a><a href="baccarat-tips.html">百家樂技巧</a><a href="about.html">關於JP真人</a></div>
+      <a class="btn btn-white" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a>
+    </nav>
+  </div>
+</header>
+<nav class="crumbs" aria-label="麵包屑"><div class="wrap"><ol>
+  <li><a href="index.html">首頁</a><svg width="10" height="9" viewBox="0 0 10 9" fill="none" aria-hidden="true"><path d="M0.223633 8.4472L8.22363 4.44723L0.223633 0.447204" stroke="#003F30"/></svg></li>
+  <li><a href="jp-info.html">百家樂資訊</a><svg width="10" height="9" viewBox="0 0 10 9" fill="none" aria-hidden="true"><path d="M0.223633 8.4472L8.22363 4.44723L0.223633 0.447204" stroke="#003F30"/></svg></li>
+  <li><span aria-current="page">百家樂試玩怎麼玩？真人百家樂規則、百家試玩步驟與JP百家樂特色</span></li></ol></div></nav>
+<div class="wrap layout">
+  <article class="article"><header class="art-head"><h1><span class="seg">百家樂試玩怎麼玩？</span><span class="seg">真人百家樂規則、百家試玩步驟與JP百家樂特色</span></h1><p class="byline">作者：TUZAMU / 25 / 10 月, 2026</p></header>
+<p class="lede">JP百家樂 試玩怎麼玩？完整解析 真人百家樂 規則、百家試玩 操作教學、點數計算、派彩方式與常見玩法，帶你了解 百家樂試玩 流程、JP真人百家 特色、遊戲介面及免費試玩注意事項，新手也能快速掌握玩法與操作重點。</p>
+<nav class="toc" aria-label="文章目錄"><p class="toc-title">文章目錄</p><ol><li><a href="#s1">1. 百家樂試玩是什麼？</a></li><li><a href="#s2">2. 真人百家樂規則教學</a><ol><li><a href="#s3">2.1 莊家、閒家與和局</a></li><li><a href="#s4">2.2 點數計算與補牌規則</a></li><li><a href="#s5">2.3 常見投注選項與派彩說明</a></li></ol></li><li><a href="#s6">3. 百家試玩怎麼操作？</a><ol><li><a href="#s7">3.1 步驟一：進入百家樂試玩遊戲介面</a></li><li><a href="#s8">3.2 步驟二：認識遊戲桌面與功能按鈕</a></li><li><a href="#s9">3.3 步驟三：使用虛擬籌碼體驗遊戲流程</a></li><li><a href="#s10">3.4 步驟四：查看開牌結果與試玩紀錄</a></li></ol></li><li><a href="#s11">4. 真人百家樂有哪些玩法？</a><ol><li><a href="#s12">4.1 快速百家樂與其他特殊玩法</a></li><li><a href="#s13">4.2 不同玩法的規則與限制</a></li></ol></li><li><a href="#s14">5. JP百家樂是什麼？</a><ol><li><a href="#s15">5.1 基本特色</a></li><li><a href="#s16">5.2 遊戲畫面與功能</a></li></ol></li><li><a href="#s17">6. 立即體驗JP百家樂試玩</a></li><li><a href="#s18">7. 常見問題 FAQ</a><ol><li><a href="#s19">7.1 Q1：百家樂試玩需要註冊帳號嗎？</a></li><li><a href="#s20">7.2 Q2：百家試玩需要儲值嗎？</a></li><li><a href="#s21">7.3 Q3：真人百家樂與一般百家樂有什麼不同？</a></li><li><a href="#s22">7.4 Q4：JP百家樂有提供免費試玩嗎？</a></li><li><a href="#s23">7.5 Q5：百家樂試玩的虛擬籌碼可以換成現金嗎？</a></li></ol></li></ol></nav>
+<section class="block"><h2 id="s1">百家樂試玩是什麼？</h2><p>百家樂試玩是透過模擬模式熟悉百家樂規則與操作流程的方式，部分遊戲提供虛擬籌碼，讓新手不必使用真實金錢，也能了解莊家、閒家、和局、點數計算及補牌規則。相較於正式遊戲，百家試玩更適合初次接觸真人百家樂的使用者，協助認識投注區域、派彩方式與開牌流程。不過，並非所有平台都提供免費試玩，部分可能需要註冊或登入，實際功能應以官方資訊為準。此外，百家樂試玩僅供學習與熟悉操作，無法預測下一局結果或提高勝率，應視為了解遊戲機制的工具，而非獲利保證。</p><img src="img/a01.jpg" alt="百家樂試玩是什麼？" width="600" height="400" loading="lazy"></section><section class="block"><h2 id="s2">真人百家樂規則教學</h2><p>真人百家樂由真人荷官負責發牌，玩家可透過即時畫面觀看開牌流程，基本規則是比較莊家與閒家的最終點數，較接近9點的一方獲勝。對初次接觸的玩家而言，透過百家樂試玩熟悉點數計算、補牌條件、和局判定及派彩規則，有助於快速了解遊戲玩法與操作方式。</p><img src="img/a02.jpg" alt="真人百家樂規則教學" width="600" height="400" loading="lazy"></section><section class="block"><h3 id="s3">莊家、閒家與和局</h3><p>真人百家樂主要分為莊贏、閒贏與和局三種結果，系統依照固定規則計算雙方點數，較高者獲勝，點數相同則為和局。莊家與閒家代表兩組牌，並非玩家身分。新手可透過百家試玩觀察開牌結果、熟悉投注區域及勝負判定方式。部分遊戲另提供對子等特殊投注選項，但基本規則仍以莊、閒兩組牌的最終點數為核心。</p><img src="img/a03.jpg" alt="莊家、閒家與和局" width="1024" height="539" loading="lazy"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">結果類型</th><th scope="col">基本說明</th></tr></thead><tbody><tr><th scope="row">莊贏</th><td>莊家最終點數高於閒家</td></tr><tr><th scope="row">閒贏</th><td>閒家最終點數高於莊家</td></tr><tr><th scope="row">和局</th><td>莊家與閒家最終點數相同</td></tr></tbody></table></div></section><section class="block"><h3 id="s4">點數計算與補牌規則</h3><p>真人百家樂的點數計算方式相當簡單，A為1點、2至9依牌面計算，10、J、Q、K皆為0點，總點數超過9時只取個位數，例如7加8等於15，最終為5點。補牌方面，莊家與閒家先各發兩張牌，若任一方取得8點或9點的「天牌」，通常不再補牌；否則閒家依自身點數決定是否補牌，莊家則依點數及閒家第三張牌判定。透過百家樂試玩或百家試玩模式，新手可以觀察自動補牌與開牌流程，更容易掌握基本規則。</p><h4>百家樂點數計算表</h4><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">牌面類型</th><th scope="col">基本說明</th></tr></thead><tbody><tr><th scope="row">A</th><td>計算為1點</td></tr><tr><th scope="row">2 ~ 9</th><td>依照牌面數字計算點數</td></tr><tr><th scope="row">10、J、Q、K</th><td>全部計算為0點</td></tr><tr><th scope="row">總點數超過9</th><td>只取個位數，例如7＋8＝15，最終為5點</td></tr></tbody></table></div><h4>百家樂補牌規則表</h4><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">判定情況</th><th scope="col">補牌規則說明</th></tr></thead><tbody><tr><th scope="row">初始發牌</th><td>莊家與閒家先各發兩張牌</td></tr><tr><th scope="row">天牌8或9點</th><td>任一方前兩張合計8或9點，雙方停止補牌</td></tr><tr><th scope="row">閒家0 ~ 5點</th><td>沒有天牌時，閒家補第三張牌</td></tr><tr><th scope="row">閒家6 ~ 7點</th><td>閒家不補牌</td></tr><tr><th scope="row">莊家補牌</th><td>依莊家點數及閒家是否補牌、第三張牌點數判定</td></tr><tr><th scope="row">最終勝負</th><td>比較莊閒最終點數，較接近9點者獲勝</td></tr></tbody></table></div></section><section class="block"><h3 id="s5">常見投注選項與派彩說明</h3><p>真人百家樂常見投注選項包括莊家、閒家與和局，部分遊戲另提供莊對、閒對等附加投注。不同選項的派彩倍率、佣金制度及成立條件可能有所差異，部分免佣百家樂也採用特殊派彩規則，因此不能只憑賠率高低判斷勝算。新手可透過百家樂試玩熟悉各投注區域，並在百家試玩前查看遊戲說明，確認實際派彩、投注限制與結果判定方式，避免誤解不同玩法的規則。</p><img src="img/a03b.jpg" alt="常見投注選項與派彩說明" width="1002" height="288" loading="lazy"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">投注選項</th><th scope="col">基本說明</th></tr></thead><tbody><tr><th scope="row">閒家</th><td>通常為1賠1</td></tr><tr><th scope="row">莊家</th><td>傳統佣金制通常為1賠0.95</td></tr><tr><th scope="row">和局</th><td>常見為1賠8或1賠9</td></tr><tr><th scope="row">莊對、閒對</th><td>依遊戲版本與供應商規則而定</td></tr></tbody></table></div></section><section class="block"><h3 id="s6">百家試玩怎麼操作？</h3><p>初次接觸百家試玩，建議先確認遊戲是否提供免費模擬模式，再依序熟悉投注區域、虛擬籌碼、功能按鈕、開牌流程與歷史紀錄。透過百家樂試玩，新手可以了解真人百家樂的莊閒判定、點數計算及結算方式，並觀察每局遊戲的完整操作流程。若想進一步認識JP百家樂與JP真人百家的介面特色，也應先確認平台是否支援試玩功能。由於不同遊戲版本的操作方式與使用限制可能有所差異，以下整理四個常見試玩步驟，協助新手快速掌握基本操作。</p><img src="img/a04.jpg" alt="百家試玩怎麼操作？" width="600" height="400" loading="lazy"></section><section class="block"><h3 id="s7">步驟一：進入百家樂試玩遊戲介面</h3><p>開始百家樂試玩前，先確認平台是否提供免費試玩、Demo或模擬模式。部分遊戲可直接開啟，部分則需要登入帳號。建議透過官方來源確認試玩入口、使用條件及所在地法律規定，避免誤入不明網站或正式投注模式。</p><img src="img/a06.jpg" alt="步驟一：進入百家樂試玩遊戲介面" width="1024" height="635" loading="lazy"></section><section class="block"><h3 id="s8">步驟二：認識遊戲桌面與功能按鈕</h3><p>進入真人百家樂模擬介面後，可先認識莊家、閒家、和局等投注區域，以及籌碼選擇、規則說明、遊戲紀錄與音效設定等功能。部分百家試玩版本還會提供歷史路單，但這些紀錄僅供查看過往結果，無法預測下一局勝負。</p><img src="img/a07.jpg" alt="步驟二：認識遊戲桌面與功能按鈕" width="1024" height="539" loading="lazy"></section><section class="block"><h3 id="s9">步驟三：使用虛擬籌碼體驗遊戲流程</h3><p>若百家樂試玩提供虛擬籌碼，可透過模擬操作了解籌碼選擇、投注確認、開牌與結算流程。虛擬籌碼通常不具現金價值，也無法兌換獎金。操作前應確認目前為免費試玩模式，避免誤用真實餘額，並將模擬結果視為學習參考。</p><img src="img/a08.jpg" alt="步驟三：使用虛擬籌碼體驗遊戲流程" width="1024" height="416" loading="lazy"></section><section class="block"><h3 id="s10">步驟四：查看開牌結果與試玩紀錄</h3><p>每局百家試玩結束後，畫面通常會顯示莊閒點數、勝負結果及虛擬籌碼變化，部分版本也提供歷史紀錄，方便觀察補牌與結果判定方式。由於真人百家樂每局結果具有隨機性，過去的莊贏、閒贏或和局紀錄，並不能保證下一局出現相同結果。</p></section><section class="block"><img src="img/a09.jpg" alt="步驟四：查看開牌結果與試玩紀錄" width="1024" height="539" loading="lazy"></section><section class="block"><h2 id="s11">真人百家樂有哪些玩法？</h2><p>真人百家樂除了經典玩法，也有快速百家樂、免佣百家樂及其他特殊版本。各種玩法通常保留莊閒點數比較規則，但在開牌速度、佣金制度、投注選項與派彩方式上有所不同。透過百家樂試玩了解基本流程，並比較不同版本的遊戲規則與限制，有助於新手掌握玩法差異。</p><img src="img/a10.jpg" alt="真人百家樂有哪些玩法？" width="600" height="400" loading="lazy"></section><section class="block"><h3 id="s12">快速百家樂與其他特殊玩法</h3><p>快速百家樂主要縮短每局等待時間，讓遊戲節奏更加緊湊；免佣百家樂則可能取消傳統莊家佣金，但針對特定獲勝點數採用不同派彩規則。部分真人百家樂版本還提供對子等附加投注選項。這些設計雖然增加玩法變化，卻不代表勝率更高，建議先了解基本規則，再確認各版本的派彩條件。</p><div class="tbl-wrap"><table class="tbl wide"><thead><tr><th scope="col">玩法類型</th><th scope="col">主要特色</th><th scope="col">注意事項</th></tr></thead><tbody><tr><th scope="row">快速百家樂</th><td>縮短每局等待時間，遊戲節奏較快</td><td>留意投注時間與截止提示</td></tr><tr><th scope="row">免佣百家樂</th><td>可能取消傳統莊家佣金</td><td>特定獲勝點數可能採不同派彩規則</td></tr><tr><th scope="row">對子投注</th><td>部分版本提供莊對、閒對等附加投注</td><td>確認成立條件、派彩倍率與風險</td></tr><tr><th scope="row">其他特殊玩法</th><td>可能加入額外投注選項或特殊功能</td><td>依遊戲版本確認規則與限制</td></tr></tbody></table></div></section><section class="block"><h3 id="s13">不同玩法的規則與限制</h3><p>選擇百家試玩版本時，應先確認遊戲規則、投注限制、佣金計算與派彩方式，並留意是否提供免費模擬模式。不同真人百家樂玩法的規則與風險可能有所差異，不能直接套用其他版本的設定。透過百家樂試玩熟悉介面與操作流程，有助於理解各種玩法的實際差別，但無法保證正式遊戲的勝負結果。</p><div class="tbl-wrap"><table class="tbl wide"><thead><tr><th scope="col">玩法類型</th><th scope="col">主要特色</th><th scope="col">需要注意的事項</th></tr></thead><tbody><tr><th scope="row">經典百家樂</th><td>傳統莊閒比較與佣金制度</td><td>莊家佣金及和局規則</td></tr><tr><th scope="row">快速百家樂</th><td>每局節奏通常較快</td><td>操作時間與下注截止提示</td></tr><tr><th scope="row">免佣百家樂</th><td>採用不同佣金或派彩制度</td><td>特定結果的派彩限制</td></tr><tr><th scope="row">特殊百家樂</th><td>可能加入附加投注或特殊功能</td><td>額外規則及不同的莊家優勢</td></tr></tbody></table></div></section><section class="block"><h2 id="s14">JP百家樂是什麼？</h2><p>JP百家樂以「經典玩法 × 創新娛樂」為特色，結合真人百家樂的莊閒規則、真人荷官直播與互動娛樂元素，讓傳統牌局呈現更多元的遊戲體驗。JP真人百家保留基本的點數計算與開牌流程，同時著重遊戲畫面及操作體驗。對初次接觸的使用者而言，可以先透過百家樂試玩了解遊戲介面、投注區域與基本規則，並利用百家試玩熟悉操作流程，進一步認識不同玩法的特色與使用限制。</p><img src="img/a12.jpg" alt="JP百家樂是什麼？" width="600" height="400" loading="lazy"></section><section class="block"><h3 id="s15">基本特色</h3><p>JP真人百家以經典真人百家樂規則為基礎，結合真人荷官直播、遊戲畫面與互動娛樂元素，呈現更豐富的牌局體驗。JP百家樂著重發牌流程、桌台呈現與操作介面的整體設計，讓使用者在熟悉莊閒玩法的同時，也能感受不同的視覺效果與娛樂特色。初次接觸時，建議先了解遊戲規則及功能限制，確認是否提供百家樂試玩模式。</p><img src="img/xfeb994ba6b.jpg" alt="基本特色" width="600" height="400" loading="lazy"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">特色項目</th><th scope="col">基本說明</th></tr></thead><tbody><tr><th scope="row">經典遊戲規則</th><td>以真人百家樂的莊閒比較、點數計算及補牌規則為基礎</td></tr><tr><th scope="row">真人荷官直播</th><td>結合真人荷官影像，呈現遊戲進行與開牌過程</td></tr><tr><th scope="row">互動娛樂元素</th><td>著重直播呈現與互動體驗，實際功能依遊戲版本而定</td></tr><tr><th scope="row">桌台與介面設計</th><td>重視遊戲畫面、發牌流程及操作介面的整體呈現</td></tr><tr><th scope="row">百家樂試玩</th><td>可先確認是否提供模擬模式，以熟悉操作流程與使用限制</td></tr></tbody></table></div></section><section class="block"><h3 id="s16">遊戲畫面與功能</h3><p>JP百家樂的遊戲畫面可從真人荷官影像、莊閒投注區域、點數顯示及開牌流程等方面了解，並留意是否提供歷史紀錄、桌台切換與手機操作功能。對新手而言，若平台支援百家試玩，便可透過模擬介面熟悉籌碼選擇、功能按鈕與結果判定方式，進一步了解JP真人百家的操作特色。實際功能與試玩權限仍應以官方說明為準。</p><img src="img/a13.jpg" alt="遊戲畫面與功能" width="1024" height="539" loading="lazy"></section><section class="block cta"><h3 id="s17">立即體驗JP百家樂試玩</h3><p>想進一步了解JP百家樂的玩法與操作方式，可以先查看官方提供的遊戲規則、示範畫面及百家樂試玩資訊，熟悉JP真人百家樂的莊閒判定、點數計算與遊戲介面，並確認是否支援虛擬籌碼及歷史紀錄等功能。透過百家試玩認識基本流程，有助於新手了解JP真人百家與其他真人百家樂版本的差異。不過，試玩無法預測勝負或保證獲利，使用前仍應留意所在地法律、個人資料安全及相關風險。立即查看JP百家樂試玩的官方說明，掌握遊戲特色、操作方式與使用限制，再評估是否適合自己。</p><img class="banner" src="img/banner03.jpg" alt="立即體驗JP百家樂試玩" width="2172" height="724" loading="lazy"><a class="btn btn-green" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">免費試玩</a></section><section class="block"><h2 id="s18">常見問題 FAQ</h2></section><section class="block"><h3 id="s19">Q1：百家樂試玩需要註冊帳號嗎？</h3><p>不一定，部分百家樂試玩版本提供免註冊模擬功能，讓新手直接熟悉遊戲介面、基本規則與操作流程；也有部分平台需要先登入會員帳號，才能使用試玩模式或查看遊戲內容。由於不同真人百家樂供應商的使用條件可能有所差異，建議事先確認是否需要註冊、驗證身分及提供個人資料，並以官方公布的規定為準。</p></section><section class="block"><h3 id="s20">Q2：百家試玩需要儲值嗎？</h3><p>一般免費百家試玩不需要儲值真實金錢，而是透過虛擬籌碼模擬投注、開牌與結算流程，協助使用者了解百家樂試玩的操作方式。如果網站要求先儲值才能進入遊戲，應先確認該功能是否屬於真正的免費試玩，並仔細閱讀相關條款，避免將正式投注模式誤認為模擬體驗。</p></section><section class="block"><h3 id="s21">Q3：真人百家樂與一般百家樂有什麼不同？</h3><p>真人百家樂通常透過真人荷官與即時影像呈現發牌、補牌及開牌過程，而部分一般百家樂版本則使用電腦動畫或其他數位方式顯示遊戲結果。兩者在莊家、閒家、和局及點數計算方面可能採用相近規則，但遊戲介面、每局節奏、投注選項與派彩條件仍可能不同。建議透過百家樂試玩或官方規則說明了解各版本差異，不要直接套用其他遊戲的規定。</p></section><section class="block"><h3 id="s22">Q4：JP百家樂有提供免費試玩嗎？</h3><p>JP百家樂是否提供免費試玩，取決於實際遊戲供應商、平台設定及使用權限，並非所有版本都具備相同功能。想了解JP真人百家的遊戲介面與操作方式，可以先確認官方是否提供模擬模式、規則介紹或示範畫面。如果平台沒有明確標示免費試玩入口，應避免直接認定可以使用虛擬籌碼，並留意網站來源與相關使用限制。</p></section><section class="block"><h3 id="s23">Q5：百家樂試玩的虛擬籌碼可以換成現金嗎？</h3><p>一般百家樂試玩使用的虛擬籌碼僅供模擬操作，不具有實際現金價值，也無法直接兌換成真實金錢。這類百家試玩功能主要用來認識投注區域、點數計算及遊戲結算方式，與正式使用真實金錢的模式有所不同。使用前建議確認虛擬籌碼的用途、使用期限及平台條款，避免誤解試玩點數的性質。</p></section></article>
+  <div class="rule" aria-hidden="true"></div>
+  <aside class="aside" aria-label="側欄">
+    <a class="ad" href="index.html#promos"><img src="img/side1.jpg" alt="送1000體驗金 立即體驗JP百家樂" width="300" height="224" loading="lazy"></a>
+    <nav class="cats" aria-label="資訊分類"><h2>資訊分類</h2><a href="article.html" aria-current="page">百家樂試玩怎麼玩？真人百家樂規則、百家試玩步驟與JP百家樂特色</a><a href="article-2.html">MT真人荷官回歸竟不發牌？MT百家樂試玩與JP真人試玩教學</a><a href="article-3.html">MT荷官不發牌了？MT荷官消失後改真人直播，JP真人百家樂試玩比較</a><a href="article-4.html">MT荷官回歸了嗎？MT荷官直播與JP真人百家樂解析</a><a href="article-5.html">百家樂線上平台推薦｜真人百家樂排名與JP、MT、DG比較</a><a href="article-6.html">線上百家樂推薦怎麼挑？線上百家樂詐騙辨識、真人美女百家樂與JP真人試玩</a><a href="article-7.html">百家樂賺錢是真的嗎？JP真人百家樂實測、JP倍數百家樂與真人試玩</a><a href="article-8.html">JP真人百家樂實測｜3大攻略技巧與JP真人試玩解析</a><a href="article-9.html">MT百家樂 vs JP百家樂｜MT、JP真人荷官顏值比較與JP真人試玩</a></nav>
+    <a class="ad" href="index.html#promos"><img src="img/side2.jpg" alt="JP百家 下注包賠" width="300" height="224" loading="lazy"></a>
+  </aside>
+</div>
+<section class="wrap related" aria-labelledby="rel-h"><div class="related-head"><h2 id="rel-h">相關文章</h2><p>Latest Articles</p></div>
+  <div class="rel-grid"><a class="rel" href="article.html"><div class="media"><img src="img/post1.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>百家樂試玩怎麼玩？真人百家樂規則、百家試玩步驟與JP百家樂特色</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-2.html"><div class="media"><img src="img/post2.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>MT真人荷官回歸竟不發牌？MT百家樂試玩與JP真人試玩教學</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-3.html"><div class="media"><img src="img/post3.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>MT荷官不發牌了？MT荷官消失後改真人直播，JP真人百家樂試玩比較</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-4.html"><div class="media"><img src="img/post4.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>MT荷官回歸了嗎？MT荷官直播與JP真人百家樂解析</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-5.html"><div class="media"><img src="img/post5.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>百家樂線上平台推薦｜真人百家樂排名與JP、MT、DG比較</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-6.html"><div class="media"><img src="img/post6.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>線上百家樂推薦怎麼挑？線上百家樂詐騙辨識、真人美女百家樂與JP真人試玩</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-7.html"><div class="media"><img src="img/post7.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>百家樂賺錢是真的嗎？JP真人百家樂實測、JP倍數百家樂與真人試玩</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-8.html"><div class="media"><img src="img/post8.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>JP真人百家樂實測｜3大攻略技巧與JP真人試玩解析</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-9.html"><div class="media"><img src="img/post9.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>MT百家樂 vs JP百家樂｜MT、JP真人荷官顏值比較與JP真人試玩</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a></div></section>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="licences">
+      <img src="img/pagcor.png" alt="PAGCOR" width="230" height="67">
+      <img src="img/mga.png" alt="Malta Gaming Authority" width="274" height="55">
+      <img src="img/fsc.png" alt="British Virgin Islands Financial Services Commission" width="283" height="68">
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col"><h4>遊戲聲明</h4><ul><li><a href="terms.html#disclaimer">免責聲明</a></li><li><a href="terms.html#terms">服務條款</a></li><li><a href="terms.html#privacy">隱私權政策</a></li><li><a href="terms.html#responsible">責任娛樂</a></li><li><a href="terms.html#contact">聯絡我們</a></li></ul></div>
+      <div class="foot-col"><h4>JP真人教學</h4><ul><li><a href="random-multiplier.html">隨機倍率玩法</a></li><li><a href="baccarat-tips.html">百家樂技巧</a></li><li><a href="jp-info.html">JP真人資訊</a></li><li><a href="article.html">百家樂玩法</a></li><li><a href="about.html">關於JP真人</a></li></ul></div>
+      <div class="stores"><a href="#" aria-label="Google Play 下載"><img src="img/gplay.png" alt="GET IT ON Google Play" width="120" height="40"></a><a href="#" aria-label="App Store 下載"><img src="img/appstore.png" alt="Download on the App Store" width="120" height="40"></a></div>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="to-top" type="button" aria-label="回到頂端"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true"><circle cx="30" cy="30" r="30" fill="#FFD43B"/><path d="M10.6152 38.7692L30.2306 20.7692L49.846 38.7692" stroke="#003F30" stroke-width="6"/></svg></button>
+<script>
+(function(){
+  var t=document.getElementById('nav-toggle'), n=document.getElementById('site-nav');
+  if(t&&n){ t.addEventListener('click',function(){ var o=n.classList.toggle('open'); t.setAttribute('aria-expanded',o?'true':'false'); t.setAttribute('aria-label',o?'關閉選單':'開啟選單'); });
+    n.addEventListener('click',function(e){ if(e.target.closest('a')){ n.classList.remove('open'); t.setAttribute('aria-expanded','false'); t.setAttribute('aria-label','開啟選單'); } }); }
+  var tr=document.querySelector('.ticker-track');
+  function setDur(){ if(tr){ tr.style.setProperty('--ticker-dur', (tr.scrollWidth/2/100).toFixed(2)+'s'); } }
+  setDur(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(setDur); window.addEventListener('resize', setDur);
+  // Every page opens at the top (unless the link targets an anchor)
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+  if(!location.hash) window.scrollTo(0,0);
+  // Back-to-top button (Figma 4213:10029)
+  var up=document.getElementById('to-top');
+  if(up){ var tick=function(){ up.classList.toggle('show', window.scrollY>400); };
+    window.addEventListener('scroll', tick, {passive:true}); tick();
+    up.addEventListener('click', function(){ window.scrollTo({top:0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}); }); }
+})();
+</script>
+</body></html>

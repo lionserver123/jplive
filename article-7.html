@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>百家樂賺錢是真的嗎</title>
+<meta name="description" content="百家樂賺錢 真的可行嗎？完整實測 JP真人百家樂 與 JP倍數百家樂，解析真人荷官、莊閒下注、隨機倍率與實際玩法，整理百家樂攻略、固定注碼、資金控制與牌路技巧，並附上 JP真人試玩 步驟，快速看懂JP百家樂怎麼玩。">
+<link rel="icon" href="img/favicon.ico" sizes="48x48"><link rel="icon" href="img/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"><meta name="theme-color" content="#032116"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+/* JP Live — shared styles. Tokens come from the Figma file's styles (品牌主色 / 品牌深色 / 品牌輔色 / 品牌亮色 / 品牌副輔色). */
+:root {
+  --brand: #003f30;      /* 品牌主色 */
+  --brand-deep: #032116; /* 品牌深色 */
+  --brand-mid: #26776c;  /* 品牌輔色 */
+  --brand-bright: #00ad90; /* 品牌亮色 */
+  --mint: #35a495;
+  --gold: #ffd43b;       /* 品牌副輔色 */
+  --gold-edge: #fff156;
+  --ink: #000;
+  --ink-soft: #333;
+  --white: #fff;
+  --paper: #fafcfb;
+  --font-ch: "Noto Sans TC", "Noto Sans", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-en: "Inter", "Noto Sans TC", system-ui, sans-serif;
+  --gutter: 56px;
+  --maxw: 1610px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body { margin: 0; font-family: var(--font-ch); font-size: 16px; line-height: 24px; font-weight: 400; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+p { margin: 0; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
+
+.wrap { width: 100%; max-width: var(--maxw); margin-inline: auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+
+/* ---------- Buttons (190 x 50 everywhere; hover states from the Figma UI page) ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 50px; width: 190px; flex: none;
+  border-radius: 80px; border: 1px solid var(--white); font-weight: 400; font-size: 16px; line-height: 24px;
+  white-space: nowrap; cursor: pointer; transition: background-color .3s linear, color .3s linear, border-color .3s linear, box-shadow .3s linear; }
+.btn-white { background: var(--white); color: var(--brand); }
+.btn-white:hover { background: var(--mint); border-color: var(--brand-bright); color: var(--white); transition-duration: .35s; }
+.btn-green { background: var(--brand); color: var(--white); }
+.btn-green:hover { background: var(--white); border-color: var(--brand-bright); color: var(--brand); }
+.btn-ghost { background: transparent; color: var(--white); width: 136px; }
+.btn-ghost:hover { background: var(--white); color: var(--brand-deep); }
+.btn-gold { background: var(--gold); color: var(--brand); border-color: var(--gold-edge); }
+.btn-gold:hover { box-shadow: 0 0 20px #ffe100; }
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ---------- Header ---------- */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+  background: linear-gradient(to bottom, #000604 0%, var(--brand-deep) 61%); border-bottom: 1px solid var(--white); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: #000604; }
+.site-header .wrap { height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo img { width: 101px; height: 48px; }
+.nav { display: flex; align-items: center; }
+.nav-links { display: flex; }
+.nav-links a { width: 160px; height: 50px; padding: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  color: var(--white); font-weight: 400; position: relative; }
+.nav-links a::after { content: ""; width: 58px; height: 2px; background: transparent; transition: background-color .35s linear; }
+.nav-links a:hover::after, .nav-links a[aria-current="page"]::after { background: var(--white); }
+.head-reg { display: none; }
+.nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.5); border-radius: 10px; background: transparent; color: var(--white); cursor: pointer; align-items: center; justify-content: center; }
+.nav-toggle .bars { position: relative; width: 20px; height: 12px; display: block; }
+.nav-toggle .bars span { position: absolute; left: 0; width: 100%; height: 2px; border-radius: 2px; background: currentColor; transition: top .25s ease, transform .25s ease; }
+.nav-toggle .bars span:first-child { top: 0; }
+.nav-toggle .bars span:last-child { top: 10px; }
+.nav-toggle[aria-expanded="true"] .bars span { top: 5px; }
+.nav-toggle[aria-expanded="true"] .bars span:first-child { transform: rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .bars span:last-child { transform: rotate(-45deg); }
+@media (prefers-reduced-motion: reduce) { .nav-toggle .bars span { transition: none; } }
+
+@media (max-width: 1280px) { .nav-links a { width: auto; min-width: 88px; padding-inline: 14px; } }
+@media (max-width: 1040px) {
+  .nav-toggle { display: inline-flex; }
+  .nav { position: absolute; top: 100%; left: 0; right: 0; background: var(--brand-deep); border-bottom: 1px solid var(--brand-mid);
+    flex-direction: column; align-items: stretch; padding: 8px max(16px, env(safe-area-inset-right, 0px)) 20px max(16px, env(safe-area-inset-left, 0px)); gap: 12px; }
+  .nav:not(.open) { display: none; }
+  .nav-links { flex-direction: column; }
+  .nav-links a { width: 100%; height: 48px; align-items: center; text-align: center; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .nav > .btn { display: none; }
+  .head-reg { display: inline-flex; margin-left: auto; width: auto; height: 44px; padding: 0 20px; font-size: 14px; }
+  .nav-links a::after { display: none; }
+}
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--white); background: linear-gradient(to top, #000604 0%, var(--brand-deep) 61%); color: var(--white); }
+.site-footer .wrap { padding-block: 60px; display: flex; gap: 60px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.licences { display: flex; gap: 60px; align-items: center; flex-wrap: wrap; justify-content: center; }
+.licences img { height: auto; }
+.foot-cols { display: flex; gap: 16px; align-items: flex-start; }
+.foot-col { width: 109px; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.foot-col h4 { font-size: 16px; font-weight: 400; line-height: 24px; }
+.foot-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.foot-col a { display: block; padding: 4px 8px; font-size: 12px; line-height: 15px; text-align: center; transition: opacity .35s linear; }
+.foot-col a:hover { opacity: .5; }
+.stores { display: flex; flex-direction: column; gap: 8px; width: 120px; }
+.stores img { width: 120px; height: 40px; }
+@media (max-width: 760px) {
+  .site-footer .wrap { gap: 36px; padding-block: 40px; }
+  .licences { gap: 24px 32px; }
+  .licences img { transform: scale(.82); }
+  .foot-cols { flex-wrap: wrap; justify-content: center; }
+}
+
+/* ---------- Section heading (icon box + zh/en titles) ---------- */
+.sec-head { display: flex; gap: 24px; align-items: center; }
+.sec-head.center { flex-direction: column; text-align: center; }
+.icon-box { flex: none; width: 40px; height: 40px; border: 2px solid var(--white); border-radius: 8px; display: grid; place-items: center; }
+.icon-box svg { display: block; }
+.icon-box.bare { border: 0; width: 42px; height: 42px; }
+.sec-titles { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.sec-titles h2 { font-size: 38px; line-height: 42px; font-weight: 700; }
+.sec-titles .en { font-family: var(--font-en); font-weight: 300; font-size: 24px; line-height: 1.1; }
+.sec-titles .en.semi { font-family: var(--font-ch); font-weight: 400; font-size: 16px; line-height: 24px; } /* Body style (Figma 4193:2211) */
+
+@media (max-width: 760px) {
+  :root { --gutter: 16px; }
+  .sec-titles h2 { font-size: 28px; line-height: 34px; }
+  .sec-titles .en { font-size: 18px; }
+  .sec-titles { gap: 10px; }
+}
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Back to top (Figma 4213:10029) */
+.to-top { position: fixed; right: max(24px, env(safe-area-inset-right, 0px) + 16px); bottom: max(24px, env(safe-area-inset-bottom, 0px) + 16px); z-index: 60;
+  width: 60px; height: 60px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,.3)); opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity .3s linear, visibility .3s linear, transform .3s ease, filter .3s linear; }
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { transform: translateY(-3px); filter: drop-shadow(0 6px 10px rgba(0,0,0,.4)) brightness(1.05); }
+.to-top:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.to-top svg { display: block; }
+@media (max-width: 760px) { .to-top, .to-top svg { width: 48px; height: 48px; } }
+
+/* Phones: button rows sit side by side and centred; single buttons are centred */
+@media (max-width: 760px) {
+  .btn-row { justify-content: center; flex-wrap: nowrap; align-self: stretch !important; }
+  .btn-row .btn { flex: 1 1 0; min-width: 0; max-width: 190px; }
+  .hero-copy > .btn, .split-copy > .btn { align-self: center !important; }
+  .game-body .btn { margin-inline: auto; }
+}
+
+/* Article: single light look, as in the Figma frame (4106:794) */
+:root { color-scheme: light; }
+body { background: var(--paper); color: var(--ink); }
+.crumbs { background: #f6f6f6; border-bottom: 1px solid #d9d9d9; }
+.crumbs ol { list-style: none; margin: 0; height: 60px; display: flex; align-items: center; gap: 12px; padding-block: 0; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+.crumbs li { display: flex; align-items: center; gap: 12px; }
+.crumbs a { color: var(--brand); transition: color .35s linear; }
+.crumbs a:hover { color: var(--mint); }
+.crumbs [aria-current] { color: var(--ink-soft); }
+
+.layout { display: flex; gap: 56px; align-items: flex-start; padding-block: 72px; }
+.article { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 32px; }
+.rule { flex: none; width: 1px; align-self: stretch; background: var(--brand); }
+.aside { flex: none; width: 300px; display: flex; flex-direction: column; gap: 45px; align-items: center; }
+.aside .ad { width: 300px; border-radius: 24px; overflow: hidden; }
+.aside .ad img { width: 100%; height: auto; }
+.cats { display: flex; flex-direction: column; gap: 16px; text-align: center; width: 100%; }
+.cats h2 { font-size: 28px; line-height: 34px; font-weight: 600; }
+.cats a { color: var(--mint); font-size: 20px; line-height: 28px; font-weight: 500; transition: color .35s linear; }
+.cats a:hover { color: var(--brand); }
+
+.art-head { display: flex; flex-direction: column; gap: 16px; }
+.art-head h1 { font-size: 38px; line-height: 42px; font-weight: 700; text-wrap: pretty; }
+.art-head h1 .seg { display: inline-block; }
+.byline { color: var(--brand); font-size: 12px; line-height: 15px; }
+.lede, .article p { font-size: 16px; line-height: 24px; }
+
+.toc { background: #f4f4f4; border: 1px solid #b3b3b3; padding: 24px; display: flex; flex-direction: column; gap: 8px; }
+.toc-title { font-size: 16px; line-height: 24px; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 24px; }
+.toc ol ol { padding-left: 24px; margin-top: 8px; }
+.toc a { transition: color .35s linear; }
+.toc a:hover { color: var(--mint); }
+
+.block { display: flex; flex-direction: column; gap: 16px; }
+.block.cta { gap: 24px; align-items: center; }
+.block.cta > :not(.btn) { align-self: stretch; }
+.article h2, .article h3 { scroll-margin-top: 120px; }
+.block h2 { font-size: 38px; line-height: 42px; font-weight: 700; }
+.block h3 { font-size: 28px; line-height: 34px; font-weight: 600; }
+.block h4 { font-size: 20px; line-height: 34px; font-weight: 600; color: var(--brand); }
+.block img { width: 100%; height: auto; }
+.block img.banner { border-radius: 24px; }
+.step-label { background: var(--brand); color: var(--white); text-align: center; padding: 8px; border: 1px solid #ccc; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 16px; }
+.steps li { flex: 1 1 0; min-width: 0; background: var(--brand); color: var(--white); border: 1px solid #ccc; padding: 8px; text-align: center; }
+.step-arrow { flex: none; }
+.article a:not(.btn) { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.article .toc a { text-decoration: none; }
+.icon-180 { width: 180px; height: 180px; margin-inline: auto; }
+
+.tbl-wrap { width: 100%; overflow-x: auto; }
+.tbl { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 16px; line-height: 24px; text-align: center; }
+.tbl.wide { min-width: 640px; }
+.tbl th, .tbl td { border: 1px solid #ccc; padding: 8px; }
+.tbl thead th { background: var(--brand); color: var(--white); font-weight: 400; }
+.tbl tbody th { background: #d8e2e0; color: var(--brand); font-weight: 400; }
+.tbl tbody td { background: var(--white); }
+.tbl tbody th.k-dark { background: var(--brand); color: var(--white); }
+.tbl thead th[colspan] { font-weight: 400; }
+
+.cta { display: flex; flex-direction: column; gap: 24px; align-items: center; }
+.cta img { border-radius: 24px; width: 100%; height: auto; }
+
+.related { display: flex; flex-direction: column; gap: 32px; padding-bottom: 72px; }
+.related-head { text-align: center; color: #1a1a1a; display: flex; flex-direction: column; gap: 16px; }
+.related-head h2 { font-size: 38px; line-height: 42px; font-weight: 700; }
+.related-head p { font-family: var(--font-en); font-weight: 300; font-size: 24px; line-height: 1.1; }
+.rel-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.rel { border: 1px solid #b3b3b3; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 24px; background: var(--paper); }
+.rel .media { aspect-ratio: 400 / 256; border-radius: 8px; overflow: hidden; }
+.rel .media img { width: 100%; height: 100%; object-fit: cover; }
+.rel h3 { color: #1a1a1a; font-size: 24px; line-height: 28px; font-weight: 600; }
+.rel .tag { color: var(--mint); }
+
+@media (max-width: 1200px) {
+  .layout { flex-direction: column; gap: 48px; }
+  .rule { width: auto; height: 1px; }
+  .aside { position: static; width: 100%; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 32px; }
+  .aside .cats { order: -1; flex: 1 1 100%; }
+  .rel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .crumbs ol { height: 48px; font-size: 14px; gap: 8px; }
+  .crumbs li { gap: 8px; }
+  .layout { padding-block: 32px; }
+  .art-head h1, .block h2, .related-head h2 { font-size: 26px; line-height: 34px; }
+  .cats h2 { font-size: 24px; line-height: 30px; }
+  .block h3, .block h4 { font-size: 21px; line-height: 28px; }
+  .toc { padding: 18px; }
+  .toc ol { font-size: 15px; line-height: 22px; }
+  .cats a { font-size: 17px; line-height: 24px; }
+  .aside .ad { width: 100%; max-width: 300px; }
+  .rel-grid { grid-template-columns: minmax(0, 1fr); }
+  .rel h3 { font-size: 20px; }
+  .related-head p { font-size: 18px; }
+  .tbl { font-size: 14px; line-height: 22px; }
+  .steps { flex-direction: column; align-items: stretch; gap: 8px; }
+  .step-arrow { align-self: center; transform: rotate(90deg); width: 14px; height: 18px; }
+}
+.block > *, .article > *, .layout > * { min-width: 0; max-width: 100%; }
+@media (max-width: 1200px) { .article { width: 100%; flex: none; } }
+
+</style></head><body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="JP真人 首頁"><img src="img/logo.svg" alt="JP" width="101" height="48"></a>
+    <a class="btn btn-white head-reg" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="開啟選單"><span class="bars" aria-hidden="true"><span></span><span></span></span></button>
+    <nav class="nav" id="site-nav" aria-label="主選單">
+      <div class="nav-links"><a href="promotions.html">優惠列表</a><a href="random-multiplier.html">隨機倍率玩法</a><a href="jp-info.html" aria-current="page">JP真人資訊</a><a href="baccarat-tips.html">百家樂技巧</a><a href="about.html">關於JP真人</a></div>
+      <a class="btn btn-white" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a>
+    </nav>
+  </div>
+</header>
+<nav class="crumbs" aria-label="麵包屑"><div class="wrap"><ol>
+  <li><a href="index.html">首頁</a><svg width="10" height="9" viewBox="0 0 10 9" fill="none" aria-hidden="true"><path d="M0.223633 8.4472L8.22363 4.44723L0.223633 0.447204" stroke="#003F30"/></svg></li>
+  <li><a href="jp-info.html">百家樂資訊</a><svg width="10" height="9" viewBox="0 0 10 9" fill="none" aria-hidden="true"><path d="M0.223633 8.4472L8.22363 4.44723L0.223633 0.447204" stroke="#003F30"/></svg></li>
+  <li><span aria-current="page">百家樂賺錢是真的嗎？JP真人百家樂實測、JP倍數百家樂與真人試玩</span></li></ol></div></nav>
+<div class="wrap layout">
+  <article class="article"><header class="art-head"><h1><span class="seg">百家樂賺錢是真的嗎？</span><span class="seg">JP真人百家樂實測、JP倍數百家樂與真人試玩</span></h1><p class="byline">作者：TUZAMU / 25 / 10 月, 2026</p></header>
+<p class="lede">百家樂賺錢 真的可行嗎？完整實測 JP真人百家樂 與 JP倍數百家樂，解析真人荷官、莊閒下注、隨機倍率與實際玩法，整理百家樂攻略、固定注碼、資金控制與牌路技巧，並附上 JP真人試玩 步驟，快速看懂JP百家樂怎麼玩。</p>
+<nav class="toc" aria-label="文章目錄"><p class="toc-title">文章目錄</p><ol><li><a href="#s1">1. 百家樂賺錢是真的嗎？</a></li><li><a href="#s2">2. JP真人百家樂怎麼玩？</a><ol><li><a href="#s3">2.1 下注介面與籌碼設定</a></li><li><a href="#s4">2.2 可切換不同真人桌</a></li></ol></li><li><a href="#s5">3. JP倍數百家樂是什麼？</a><ol><li><a href="#s6">3.1 倍率每局隨機出現</a></li><li><a href="#s7">3.2 莊閒最高X5、對子最高X15</a></li></ol></li><li><a href="#s8">4. JP真人百家樂實測過程</a><ol><li><a href="#s9">4.1 第一步：先設定固定籌碼</a></li><li><a href="#s10">4.2 第二步：記錄牌路與隨機倍率</a></li><li><a href="#s11">4.3 第三步：確認每局實際輸贏</a></li></ol></li><li><a href="#s12">5. JP真人百家樂實測輸贏結果公開</a><ol><li><a href="#s13">5.1 單局實測獲利＋6,000</a></li><li><a href="#s14">5.2 倍率不能保證獲利</a></li></ol></li><li><a href="#s15">6. 百家樂賺錢攻略與實用技巧</a><ol><li><a href="#s16">6.1 固定注碼控制本金</a></li><li><a href="#s17">6.2 牌路不是預測公式</a></li><li><a href="#s18">6.3 高倍率不要追注</a></li></ol></li><li><a href="#s19">7. JP真人試玩怎麼玩？</a></li><li><a href="#s21">8. 立即體驗JP真人試玩與隨機倍率</a></li></ol></nav>
+<section class="block"><h2 id="s1">百家樂賺錢是真的嗎？</h2><p>百家樂賺錢確實可能發生，從這次JP真人百家樂實測也能看到單局獲利，但短期贏錢與長期穩定獲利是兩回事。百家樂每局結果都有不確定性，即使前面連續開莊、連閒或出現獲利，也不能保證下一局延續相同結果。因此玩JP真人百家樂時，與其尋找所謂穩贏公式，更重要的是先設定遊戲預算、單局注碼、停利與停損，不因連輸急著加倍追注，也不要因短期連贏就持續提高投注金額，才能更有效控制整體風險。</p><img src="img/x9f54fcc3d6.jpg" alt="百家樂賺錢是真的嗎？" width="600" height="400" loading="lazy"></section><section class="block"><h2 id="s2">JP真人百家樂怎麼玩？</h2><p>JP真人百家樂採真人荷官發牌，進入桌台後可以直接看到真人影像、莊家、閒家、和局、牌路、籌碼與下注區域。從這次實測畫面來看，除了基本莊、閒、和之外，桌台也提供閒龍寶、莊龍寶、完美對子、任意對子、閒一對與莊一對等選項，玩家可以直接從畫面完成下注、確認與重複投注，整體操作方式對熟悉真人百家樂的人來說並不複雜。</p><img src="img/x478c531a47.jpg" alt="JP真人百家樂怎麼玩？" width="600" height="400" loading="lazy"></section><section class="block"><h3 id="s3">下注介面與籌碼設定</h3><p>進入JP真人百家樂後，可以先選擇真人桌，再從畫面下方挑選籌碼並點擊下注區。實測畫面中可以看到20、100、500、2000、10K、50K等不同籌碼，也提供自訂籌碼功能，方便玩家設定常用投注額。第一次進行JP真人試玩時，建議先熟悉籌碼、莊閒下注區、確認、撤銷與重複投注等基本功能，再進一步了解隨機倍率與其他附加玩法。</p><img src="img/x178731bb05.jpg" alt="下注介面與籌碼設定" width="1024" height="655" loading="lazy"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">操作項目</th><th scope="col">功能說明</th></tr></thead><tbody><tr><th scope="row">下注區域</th><td>可選擇莊、閒、和及其他桌台提供的下注區域</td></tr><tr><th scope="row">籌碼選擇</th><td>實測可見20、100、500、2000、10K、50K等籌碼</td></tr><tr><th scope="row">自訂籌碼</th><td>可設定常用籌碼，方便控制每局投注金額</td></tr><tr><th scope="row">倍率玩法</th><td>進行JP真人試玩時，可先熟悉下注、確認、撤銷與重複投注</td></tr><tr><th scope="row">倍率玩法</th><td>完成下注後，可觀察JP倍數百家樂當局是否隨機出現倍率</td></tr></tbody></table></div></section><section class="block"><h3 id="s4">可切換不同真人桌</h3><p>從實測的大廳畫面可以看到，JP真人百家樂同時提供多張真人百家樂桌，玩家在進桌前就能查看真人荷官、近期牌路與目前桌台狀態，再決定要進入哪一桌。不同真人桌的荷官與牌局會依當下實際開放情況調整，因此進行JP真人試玩時，可以先瀏覽大廳再選擇自己習慣的桌台，不需要固定只玩同一桌。</p><img src="img/x32414269bd.jpg" alt="可切換不同真人桌" width="1024" height="691" loading="lazy"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">操作項目</th><th scope="col">查看內容</th></tr></thead><tbody><tr><th scope="row">牌桌選擇</th><td>JP真人百家樂大廳可瀏覽目前開放的不同真人桌</td></tr><tr><th scope="row">真人荷官</th><td>進桌前可先查看目前桌台的真人荷官</td></tr><tr><th scope="row">近期牌路</th><td>可查看近期莊、閒、和等牌局紀錄</td></tr><tr><th scope="row">桌台切換</th><td>可依目前開放情況自由選擇不同真人桌</td></tr><tr><th scope="row">試玩方式</th><td>進行JP真人試玩時，可先瀏覽大廳再選擇想體驗的桌台</td></tr></tbody></table></div></section><section class="block"><h2 id="s5">JP倍數百家樂是什麼？</h2><p>JP倍數百家樂是在傳統真人百家樂玩法中加入隨機倍率機制，玩家仍可依原本方式選擇莊、閒、和及對子等下注區域，不需要重新學習複雜規則。最大特色是部分牌局可能隨機出現不同倍率，讓JP真人百家樂除了基本牌局結果之外，多了倍率變化；不過倍率並非每局固定觸發，實際是否出現、倍率大小與適用區域，都應以當局遊戲畫面及規則為準。</p><img src="img/xb62bbb60a4.jpg" alt="JP倍數百家樂是什麼？" width="600" height="400" loading="lazy"></section><section class="block"><h3 id="s6">倍率每局隨機出現</h3><p>JP倍數百家樂的倍率並不是固定派發，而是依當局遊戲隨機出現。從這次實測畫面可觀察到X2、X3、X5、X13、X15等倍率，但上一局出現的倍率不代表下一局會再次出現，也不能預測倍率會落在哪個下注區域，因此玩家應以當局實際顯示為準。</p><img src="img/x4a152c2bdc.jpg" alt="倍率每局隨機出現" width="1024" height="415" loading="lazy"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">倍率特點</th><th scope="col">查看內容</th></tr></thead><tbody><tr><th scope="row">出現方式</th><td>JP倍數百家樂倍率為隨機出現，並非每局固定觸發</td></tr><tr><th scope="row">倍率變化</th><td>實測畫面可看到X2、X3、X5、X13、X15等不同倍率</td></tr><tr><th scope="row">出現位置</th><td>不同牌局的倍率可能出現在不同下注區域</td></tr><tr><th scope="row">連續出現</th><td>上一局出現倍率，不代表下一局會再次出現</td></tr><tr><th scope="row">結算方式</th><td>實際倍率與適用條件以當局遊戲畫面及規則為準</td></tr></tbody></table></div></section><section class="block"><h3 id="s7">莊閒最高X5、對子最高X15</h3><p>從目前JP真人百家樂實測畫面來看，莊、閒下注區可看到最高X5隨機倍率，對子相關區域則可看到最高X15倍率。這些數字是本次實測畫面中觀察到的倍率，不代表每局都會出現X5或X15，也不代表高倍率區域具有更高勝率；即使出現較高倍率，仍須符合當局遊戲結果與相關規則才能進行結算。</p><img src="img/x6f9db2f4d7.jpg" alt="莊閒最高X5、對子最高X15" width="1024" height="429" loading="lazy"><img src="img/x4a152c2bdc.jpg" alt="莊閒最高X5、對子最高X15" width="1085" height="723" loading="lazy"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">下注區域</th><th scope="col">查看內容</th></tr></thead><tbody><tr><th scope="row">莊家</th><td>實測畫面最高可見X5隨機倍率</td></tr><tr><th scope="row">閒家</th><td>實測畫面最高可見X5隨機倍率</td></tr><tr><th scope="row">對子相關</th><td>實測畫面最高可見X15倍率</td></tr><tr><th scope="row">倍率機制</th><td>JP倍數百家樂倍率隨機出現，不保證每局都有</td></tr><tr><th scope="row">勝率影響</th><td>高倍率不代表下注區域的命中機率提高</td></tr></tbody></table></div></section><section class="block"><h2 id="s8">JP真人百家樂實測過程</h2><p>這次JP真人百家樂實測從選桌開始，先查看目前真人荷官與牌路，再進入桌台設定下注籌碼，實際觀察莊閒結果與JP倍數百家樂的倍率變化。提供的畫面中可以看到不同牌局出現閒9點對莊8點、閒7點對莊1點等結果，同時也記錄到X2、X3、X5、X13、X15等不同倍率，能直接看出JP倍率並不是固定出現在同一個下注區。</p><img src="img/x0c4ba6617e.jpg" alt="JP真人百家樂實測過程" width="600" height="400" loading="lazy"></section><section class="block"><h3 id="s9">第一步：先設定固定籌碼</h3><p>要觀察百家樂賺錢的實際結果，最好不要每一局都隨意更換投注金額，因此實測前可以先決定本金與固定投注單位。JP真人百家樂提供多種預設籌碼與自訂籌碼功能，玩家可以按照自己的測試預算設定常用注碼。這樣不論遇到連莊、連閒或JP倍數百家樂出現高倍率，都比較容易維持原本的資金規則。</p><img src="img/a08.jpg" alt="第一步：先設定固定籌碼" width="1024" height="416" loading="lazy"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">實測項目</th><th scope="col">查看內容</th></tr></thead><tbody><tr><th scope="row">設定本金</th><td>實測前先決定可使用的測試預算</td></tr><tr><th scope="row">固定籌碼</th><td>使用固定投注單位，避免每局隨意更換金額</td></tr><tr><th scope="row">籌碼設定</th><td>JP真人百家樂提供預設籌碼與自訂籌碼功能</td></tr><tr><th scope="row">倍率出現</th><td>JP倍數百家樂隨機出現倍率時，也維持原本投注規則</td></tr><tr><th scope="row">實測目的</th><td>固定注碼更方便記錄與比較百家樂賺錢實測結果</td></tr></tbody></table></div></section><section class="block"><h3 id="s10">第二步：記錄牌路與隨機倍率</h3><p>要觀察百家樂賺錢的實際結果，最好不要每一局都隨意更換投注金額，因此實測前可以先決定本金與固定投注單位。JP真人百家樂提供多種預設籌碼與自訂籌碼功能，玩家可以按照自己的測試預算設定常用注碼。這樣不論遇到連莊、連閒或JP倍數百家樂出現高倍率，都比較容易維持原本的資金規則。</p><img src="img/x804d49ace9.jpg" alt="第二步：記錄牌路與隨機倍率" width="1536" height="808" loading="lazy"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">記錄項目</th><th scope="col">查看內容</th></tr></thead><tbody><tr><th scope="row">投注方向</th><td>記錄每局實際選擇的莊、閒或其他下注區域</td></tr><tr><th scope="row">下注金額</th><td>記錄每局使用的實際籌碼與投注金額</td></tr><tr><th scope="row">牌路結果</th><td>牌路用來整理JP真人百家樂已發生的莊閒結果</td></tr><tr><th scope="row">隨機倍率</th><td>記錄JP倍數百家樂當局是否隨機出現倍率</td></tr><tr><th scope="row">注意事項</th><td>過去牌路與倍率不能保證下一局出現相同結果</td></tr></tbody></table></div></section><section class="block"><h3 id="s11">第三步：確認每局實際輸贏</h3><p>每局開牌後，再將下注金額與結算結果記錄下來，比只看某一局贏多少更有參考價值。從這次JP真人百家樂畫面中可以看到不同莊閒結果，其中一局更直接顯示閒家勝出並出現「+6,000」，代表該局取得正收益。不過真正要判斷整場百家樂賺錢還是虧損，仍需要把整段測試的所有下注與結算一起計算。</p><img src="img/x71d749bf65.jpg" alt="第三步：確認每局實際輸贏" width="1024" height="539" loading="lazy"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">輸贏紀錄</th><th scope="col">查看內容</th></tr></thead><tbody><tr><th scope="row">每局下注</th><td>記錄實際投注金額，方便後續計算輸贏</td></tr><tr><th scope="row">開牌結果</th><td>確認莊、閒等實際牌局結果與下注是否命中</td></tr><tr><th scope="row">單局實測</th><td>這次JP真人百家樂畫面記錄到單局＋6,000</td></tr><tr><th scope="row">單局獲利</th><td>＋6,000僅代表該局正收益，不代表整場最終獲利</td></tr><tr><th scope="row">整體損益</th><td>需統計完整下注與結算，才能判斷百家樂賺錢或虧損結果</td></tr></tbody></table></div></section><section class="block"><h2 id="s12">JP真人百家樂實測輸贏結果公開</h2><p>這次實測截圖中最明確的一筆結果，是其中一局閒家勝出後畫面顯示**+6,000**，可以確認該局確實產生正收益；其他畫面則記錄不同牌局、籌碼、倍率與餘額變化。不過目前圖片沒有完整列出測試開始時的本金、全部下注紀錄以及結束時的最終餘額，因此無法僅靠單局+6,000認定整場測試最後總共賺多少。</p><img src="img/x7867126e00.jpg" alt="JP真人百家樂實測輸贏結果公開" width="600" height="400" loading="lazy"></section><section class="block"><h3 id="s13">單局實測獲利＋6,000</h3><p>這次JP真人百家樂實測中，確實記錄到單局結算+6,000的結果，代表該局下注成功取得正收益，也能直接看到實際牌局從下注、開牌到結算的完整過程。不過單局獲利只能代表當下結果，不能直接推論玩JP倍數百家樂就能持續獲利。要判斷整場是否真的達成百家樂賺錢，仍應把起始本金、每局下注金額、所有輸贏與最終餘額一起計算，才能得到較完整的實測淨損益。</p><img src="img/a09.jpg" alt="單局實測獲利＋6,000" width="1024" height="539" loading="lazy"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">實測項目</th><th scope="col">結果說明</th></tr></thead><tbody><tr><th scope="row">單局結果</th><td>JP真人百家樂實測畫面記錄到單局＋6,000</td></tr><tr><th scope="row">結果意義</th><td>＋6,000代表該局取得正收益，不代表每局都能獲利</td></tr><tr><th scope="row">倍數玩法</th><td>JP倍數百家樂的單局結果不能推論為長期穩定獲利</td></tr><tr><th scope="row">計算方式</th><td>應記錄起始本金、每局下注、所有輸贏與最終餘額</td></tr><tr><th scope="row">整體判斷</th><td>完整統計實測淨損益，才能判斷實際百家樂賺錢結果</td></tr></tbody></table></div></section><section class="block"><h3 id="s14">倍率不能保證獲利</h3><p>JP倍數百家樂的特色是牌局中可能隨機出現不同倍率，但倍率並非每局固定出現，也不保證連續觸發；即使當局出現較高倍率，也不代表下注區域的勝率同步提高。玩家仍需要先押中符合條件的結果，才能依當局規則進行倍率結算，因此看到高倍率不應直接加碼或追注。想透過JP真人百家樂研究百家樂賺錢，更值得注意的是本金控制、固定注碼與完整輸贏紀錄，而不是單靠隨機倍率判斷牌局。</p><img src="img/xa4aeceedb9.jpg" alt="倍率不能保證獲利" width="1024" height="539" loading="lazy"><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">倍率重點</th><th scope="col">實際說明</th></tr></thead><tbody><tr><th scope="row">倍率出現</th><td>JP倍數百家樂倍率為隨機出現，不保證每局都有</td></tr><tr><th scope="row">連續觸發</th><td>上一局出現倍率，不代表下一局會再次出現</td></tr><tr><th scope="row">高倍率</th><td>倍率較高不代表該下注區域的勝率同步提高</td></tr><tr><th scope="row">獲利條件</th><td>仍需符合當局遊戲結果與規則，才能依倍率進行結算</td></tr><tr><th scope="row">整體判斷</th><td>玩JP真人百家樂應控制本金與注碼，不因高倍率臨時追注</td></tr></tbody></table></div></section><section class="block"><h2 id="s15">百家樂賺錢攻略與實用技巧</h2><p>想研究百家樂賺錢，與其一直尋找所謂必中牌路，不如把重點放在「怎麼避免一次輸掉太多」。實際玩JP真人百家樂時，可以先設定總預算，再決定每局投注比例、停損與停利條件；即使JP倍數百家樂突然出現X5或X15，也維持原本的資金配置，不因為高倍率就臨時重注，才能避免單局結果對整體本金造成過大的影響。</p><img src="img/x838480d2c2.jpg" alt="百家樂賺錢攻略與實用技巧" width="600" height="400" loading="lazy"></section><section class="block"><h3 id="s16">固定注碼控制本金</h3><p>常見的輸後加倍看似可以用下一局追回虧損，但如果連續猜錯，所需本金會快速增加。進行JP真人試玩或實際體驗時，使用固定投注單位更容易知道自己已經投入多少，也比較容易執行原本設定的停損。這種方法不能保證百家樂賺錢，但可以避免因為連續失利而不斷擴大單局風險。</p><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">資金控制</th><th scope="col">實際說明</th></tr></thead><tbody><tr><th scope="row">固定注碼</th><td>每局使用固定投注單位，方便掌握投入金額</td></tr><tr><th scope="row">避免加倍</th><td>連續失利時不急著加倍追回，避免本金快速增加</td></tr><tr><th scope="row">設定停損</th><td>進行JP真人試玩前，先決定可接受的損失範圍</td></tr><tr><th scope="row">控制風險</th><td>固定注碼不能保證百家樂賺錢，但較容易控制單局風險</td></tr></tbody></table></div></section><section class="block"><h3 id="s17">牌路不是預測公式</h3><p>JP真人百家樂桌面與遊戲大廳都可以看到近期牌路，方便玩家查看已經出現的莊、閒、和分布。不過牌路記錄的是過去結果，無法保證下一局會繼續連莊、連閒或按照某種固定節奏發展。因此把牌路當成資訊整理工具會比當成預測公式更合理，也不要因為看到某種路型就認為下一局一定能靠百家樂賺錢。</p><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">牌路重點</th><th scope="col">正確理解</th></tr></thead><tbody><tr><th scope="row">牌路功能</th><td>JP真人百家樂牌路可查看已發生的莊、閒、和結果</td></tr><tr><th scope="row">連莊連閒</th><td>過去連續開莊或開閒，不代表下一局一定延續</td></tr><tr><th scope="row">路型變化</th><td>不同路型只能整理歷史結果，不能保證未來牌局</td></tr><tr><th scope="row">使用方式</th><td>將牌路作為紀錄工具，而不是百家樂賺錢的預測公式</td></tr></tbody></table></div></section><section class="block"><h3 id="s18">高倍率不要追注</h3><p>看到JP倍數百家樂出現X5、X13或X15，很容易讓人想臨時提高下注金額，但倍率高並不等於命中機率也同步提高。如果原本每局只設定固定投注額，就不應因為高倍率突然改成數倍下注。把倍率視為玩法機制，而不是必中的下注訊號，會更符合實際的資金管理邏輯。</p><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">倍率情況</th><th scope="col">操作原則</th></tr></thead><tbody><tr><th scope="row">高倍率出現</th><td>JP倍數百家樂可能隨機出現X5、X13、X15等倍率</td></tr><tr><th scope="row">出現機制</th><td>倍率為隨機出現，不保證每局都有或連續觸發</td></tr><tr><th scope="row">命中機率</th><td>高倍率不代表該下注區域的命中機率同步提高</td></tr><tr><th scope="row">下注方式</th><td>維持原本設定的投注額，不因高倍率臨時加碼</td></tr><tr><th scope="row">資金管理</th><td>將倍率視為玩法機制，不把高倍率當成追注訊號</td></tr></tbody></table></div></section><section class="block"><h2 id="s19">JP真人試玩怎麼開始？</h2><p>第一次進行JP真人試玩，可以先把目標放在熟悉遊戲，而不是一開始就追求百家樂賺錢。先從JP大廳查看目前開放的真人桌與荷官，進桌後認識莊、閒、和、對子等下注區，再設定適合自己的測試籌碼，最後觀察JP倍數百家樂的隨機倍率如何出現。熟悉整個流程之後，再決定自己是否喜歡這種真人百家樂搭配倍率的玩法。</p><h3 id="s20">JP真人試玩步驟</h3><p>一分鐘輕鬆上手！跟著以下 6 大步驟，立即體驗最流暢、真實的 JP真人百家樂。進入JP真人大廳並選擇荷官直播間，即可自由瀏覽各個JP真人百家樂的桌台與即時路單。挑選想體驗的桌台後，確認好莊、閒、和等投注區域，就能依循百家樂規則觀看真人現場開牌，並即時查看莊閒牌面與最終的牌局結算結果。</p><p class="step-label">STEP 1：進入JP真人大廳</p><img src="img/a13.jpg" alt="JP真人試玩步驟" width="1024" height="539" loading="lazy"><p class="step-label">STEP 2：瀏覽百家樂桌台與路單</p><img src="img/a06.jpg" alt="JP真人試玩步驟" width="1024" height="635" loading="lazy"><p class="step-label">STEP 3：選擇想體驗的真人桌台</p><img src="img/x4d0db76b10.jpg" alt="JP真人試玩步驟" width="1024" height="539" loading="lazy"><p class="step-label">STEP 4：確認莊、閒、和等投注區</p><img src="img/x4a152c2bdc.jpg" alt="JP真人試玩步驟" width="1024" height="415" loading="lazy"><p class="step-label">STEP 5：觀看真人百家樂開牌</p><img src="img/xf28f692c98.jpg" alt="JP真人試玩步驟" width="1024" height="539" loading="lazy"><p class="step-label">STEP 6：查看莊閒牌面與牌局結果</p><img src="img/x71d749bf65.jpg" alt="JP真人試玩步驟" width="1024" height="539" loading="lazy"></section><section class="block cta"><h2 id="s21">立即體驗JP真人試玩與隨機倍率</h2><p>綜合這次實測，JP真人百家樂除了真人荷官、牌路與莊閒玩法之外，最大特色就是加入JP倍數百家樂隨機倍率，實測可見莊閒最高X5、對子最高X15，也記錄到單局+6,000。不過倍率隨機出現，不保證每局都有，高倍率也不代表勝率提高或能穩定百家樂賺錢。建議控制本金與固定注碼，不因高倍率臨時追注；想先熟悉玩法，可透過JP真人試玩了解操作，再進一步體驗JP真人百家樂。</p><img class="banner" src="img/banner03.jpg" alt="立即體驗JP真人試玩與隨機倍率" width="2172" height="724" loading="lazy"><a class="btn btn-green" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">免費試玩</a></section></article>
+  <div class="rule" aria-hidden="true"></div>
+  <aside class="aside" aria-label="側欄">
+    <a class="ad" href="index.html#promos"><img src="img/side1.jpg" alt="送1000體驗金 立即體驗JP百家樂" width="300" height="224" loading="lazy"></a>
+    <nav class="cats" aria-label="資訊分類"><h2>資訊分類</h2><a href="article.html">百家樂試玩怎麼玩？真人百家樂規則、百家試玩步驟與JP百家樂特色</a><a href="article-2.html">MT真人荷官回歸竟不發牌？MT百家樂試玩與JP真人試玩教學</a><a href="article-3.html">MT荷官不發牌了？MT荷官消失後改真人直播，JP真人百家樂試玩比較</a><a href="article-4.html">MT荷官回歸了嗎？MT荷官直播與JP真人百家樂解析</a><a href="article-5.html">百家樂線上平台推薦｜真人百家樂排名與JP、MT、DG比較</a><a href="article-6.html">線上百家樂推薦怎麼挑？線上百家樂詐騙辨識、真人美女百家樂與JP真人試玩</a><a href="article-7.html" aria-current="page">百家樂賺錢是真的嗎？JP真人百家樂實測、JP倍數百家樂與真人試玩</a><a href="article-8.html">JP真人百家樂實測｜3大攻略技巧與JP真人試玩解析</a><a href="article-9.html">MT百家樂 vs JP百家樂｜MT、JP真人荷官顏值比較與JP真人試玩</a></nav>
+    <a class="ad" href="index.html#promos"><img src="img/side2.jpg" alt="JP百家 下注包賠" width="300" height="224" loading="lazy"></a>
+  </aside>
+</div>
+<section class="wrap related" aria-labelledby="rel-h"><div class="related-head"><h2 id="rel-h">相關文章</h2><p>Latest Articles</p></div>
+  <div class="rel-grid"><a class="rel" href="article.html"><div class="media"><img src="img/post1.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>百家樂試玩怎麼玩？真人百家樂規則、百家試玩步驟與JP百家樂特色</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-2.html"><div class="media"><img src="img/post2.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>MT真人荷官回歸竟不發牌？MT百家樂試玩與JP真人試玩教學</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-3.html"><div class="media"><img src="img/post3.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>MT荷官不發牌了？MT荷官消失後改真人直播，JP真人百家樂試玩比較</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-4.html"><div class="media"><img src="img/post4.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>MT荷官回歸了嗎？MT荷官直播與JP真人百家樂解析</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-5.html"><div class="media"><img src="img/post5.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>百家樂線上平台推薦｜真人百家樂排名與JP、MT、DG比較</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-6.html"><div class="media"><img src="img/post6.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>線上百家樂推薦怎麼挑？線上百家樂詐騙辨識、真人美女百家樂與JP真人試玩</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-7.html"><div class="media"><img src="img/post7.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>百家樂賺錢是真的嗎？JP真人百家樂實測、JP倍數百家樂與真人試玩</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-8.html"><div class="media"><img src="img/post8.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>JP真人百家樂實測｜3大攻略技巧與JP真人試玩解析</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-9.html"><div class="media"><img src="img/post9.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>MT百家樂 vs JP百家樂｜MT、JP真人荷官顏值比較與JP真人試玩</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a></div></section>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="licences">
+      <img src="img/pagcor.png" alt="PAGCOR" width="230" height="67">
+      <img src="img/mga.png" alt="Malta Gaming Authority" width="274" height="55">
+      <img src="img/fsc.png" alt="British Virgin Islands Financial Services Commission" width="283" height="68">
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col"><h4>遊戲聲明</h4><ul><li><a href="terms.html#disclaimer">免責聲明</a></li><li><a href="terms.html#terms">服務條款</a></li><li><a href="terms.html#privacy">隱私權政策</a></li><li><a href="terms.html#responsible">責任娛樂</a></li><li><a href="terms.html#contact">聯絡我們</a></li></ul></div>
+      <div class="foot-col"><h4>JP真人教學</h4><ul><li><a href="random-multiplier.html">隨機倍率玩法</a></li><li><a href="baccarat-tips.html">百家樂技巧</a></li><li><a href="jp-info.html">JP真人資訊</a></li><li><a href="article.html">百家樂玩法</a></li><li><a href="about.html">關於JP真人</a></li></ul></div>
+      <div class="stores"><a href="#" aria-label="Google Play 下載"><img src="img/gplay.png" alt="GET IT ON Google Play" width="120" height="40"></a><a href="#" aria-label="App Store 下載"><img src="img/appstore.png" alt="Download on the App Store" width="120" height="40"></a></div>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="to-top" type="button" aria-label="回到頂端"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true"><circle cx="30" cy="30" r="30" fill="#FFD43B"/><path d="M10.6152 38.7692L30.2306 20.7692L49.846 38.7692" stroke="#003F30" stroke-width="6"/></svg></button>
+<script>
+(function(){
+  var t=document.getElementById('nav-toggle'), n=document.getElementById('site-nav');
+  if(t&&n){ t.addEventListener('click',function(){ var o=n.classList.toggle('open'); t.setAttribute('aria-expanded',o?'true':'false'); t.setAttribute('aria-label',o?'關閉選單':'開啟選單'); });
+    n.addEventListener('click',function(e){ if(e.target.closest('a')){ n.classList.remove('open'); t.setAttribute('aria-expanded','false'); t.setAttribute('aria-label','開啟選單'); } }); }
+  var tr=document.querySelector('.ticker-track');
+  function setDur(){ if(tr){ tr.style.setProperty('--ticker-dur', (tr.scrollWidth/2/100).toFixed(2)+'s'); } }
+  setDur(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(setDur); window.addEventListener('resize', setDur);
+  // Every page opens at the top (unless the link targets an anchor)
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+  if(!location.hash) window.scrollTo(0,0);
+  // Back-to-top button (Figma 4213:10029)
+  var up=document.getElementById('to-top');
+  if(up){ var tick=function(){ up.classList.toggle('show', window.scrollY>400); };
+    window.addEventListener('scroll', tick, {passive:true}); tick();
+    up.addEventListener('click', function(){ window.scrollTo({top:0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}); }); }
+})();
+</script>
+</body></html>

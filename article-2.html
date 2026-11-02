@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MT真人荷官回歸竟不發牌</title>
+<meta name="description" content="MT百家樂 荷官真的回歸了嗎？ MT真人荷官 為何從直接發牌轉為直播陪玩？本文完整解析 MT百家 新舊版本差異、莊閒投注規則與 MT百家樂試玩 流程，並比較JP真人百家樂的真人發牌及隨機倍率特色，帶你了解 JP真人試玩 操作方式與兩種遊戲的">
+<link rel="icon" href="img/favicon.ico" sizes="48x48"><link rel="icon" href="img/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"><meta name="theme-color" content="#032116"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+/* JP Live — shared styles. Tokens come from the Figma file's styles (品牌主色 / 品牌深色 / 品牌輔色 / 品牌亮色 / 品牌副輔色). */
+:root {
+  --brand: #003f30;      /* 品牌主色 */
+  --brand-deep: #032116; /* 品牌深色 */
+  --brand-mid: #26776c;  /* 品牌輔色 */
+  --brand-bright: #00ad90; /* 品牌亮色 */
+  --mint: #35a495;
+  --gold: #ffd43b;       /* 品牌副輔色 */
+  --gold-edge: #fff156;
+  --ink: #000;
+  --ink-soft: #333;
+  --white: #fff;
+  --paper: #fafcfb;
+  --font-ch: "Noto Sans TC", "Noto Sans", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-en: "Inter", "Noto Sans TC", system-ui, sans-serif;
+  --gutter: 56px;
+  --maxw: 1610px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body { margin: 0; font-family: var(--font-ch); font-size: 16px; line-height: 24px; font-weight: 400; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+p { margin: 0; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
+
+.wrap { width: 100%; max-width: var(--maxw); margin-inline: auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+
+/* ---------- Buttons (190 x 50 everywhere; hover states from the Figma UI page) ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 50px; width: 190px; flex: none;
+  border-radius: 80px; border: 1px solid var(--white); font-weight: 400; font-size: 16px; line-height: 24px;
+  white-space: nowrap; cursor: pointer; transition: background-color .3s linear, color .3s linear, border-color .3s linear, box-shadow .3s linear; }
+.btn-white { background: var(--white); color: var(--brand); }
+.btn-white:hover { background: var(--mint); border-color: var(--brand-bright); color: var(--white); transition-duration: .35s; }
+.btn-green { background: var(--brand); color: var(--white); }
+.btn-green:hover { background: var(--white); border-color: var(--brand-bright); color: var(--brand); }
+.btn-ghost { background: transparent; color: var(--white); width: 136px; }
+.btn-ghost:hover { background: var(--white); color: var(--brand-deep); }
+.btn-gold { background: var(--gold); color: var(--brand); border-color: var(--gold-edge); }
+.btn-gold:hover { box-shadow: 0 0 20px #ffe100; }
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ---------- Header ---------- */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+  background: linear-gradient(to bottom, #000604 0%, var(--brand-deep) 61%); border-bottom: 1px solid var(--white); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: #000604; }
+.site-header .wrap { height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo img { width: 101px; height: 48px; }
+.nav { display: flex; align-items: center; }
+.nav-links { display: flex; }
+.nav-links a { width: 160px; height: 50px; padding: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  color: var(--white); font-weight: 400; position: relative; }
+.nav-links a::after { content: ""; width: 58px; height: 2px; background: transparent; transition: background-color .35s linear; }
+.nav-links a:hover::after, .nav-links a[aria-current="page"]::after { background: var(--white); }
+.head-reg { display: none; }
+.nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.5); border-radius: 10px; background: transparent; color: var(--white); cursor: pointer; align-items: center; justify-content: center; }
+.nav-toggle .bars { position: relative; width: 20px; height: 12px; display: block; }
+.nav-toggle .bars span { position: absolute; left: 0; width: 100%; height: 2px; border-radius: 2px; background: currentColor; transition: top .25s ease, transform .25s ease; }
+.nav-toggle .bars span:first-child { top: 0; }
+.nav-toggle .bars span:last-child { top: 10px; }
+.nav-toggle[aria-expanded="true"] .bars span { top: 5px; }
+.nav-toggle[aria-expanded="true"] .bars span:first-child { transform: rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .bars span:last-child { transform: rotate(-45deg); }
+@media (prefers-reduced-motion: reduce) { .nav-toggle .bars span { transition: none; } }
+
+@media (max-width: 1280px) { .nav-links a { width: auto; min-width: 88px; padding-inline: 14px; } }
+@media (max-width: 1040px) {
+  .nav-toggle { display: inline-flex; }
+  .nav { position: absolute; top: 100%; left: 0; right: 0; background: var(--brand-deep); border-bottom: 1px solid var(--brand-mid);
+    flex-direction: column; align-items: stretch; padding: 8px max(16px, env(safe-area-inset-right, 0px)) 20px max(16px, env(safe-area-inset-left, 0px)); gap: 12px; }
+  .nav:not(.open) { display: none; }
+  .nav-links { flex-direction: column; }
+  .nav-links a { width: 100%; height: 48px; align-items: center; text-align: center; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .nav > .btn { display: none; }
+  .head-reg { display: inline-flex; margin-left: auto; width: auto; height: 44px; padding: 0 20px; font-size: 14px; }
+  .nav-links a::after { display: none; }
+}
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--white); background: linear-gradient(to top, #000604 0%, var(--brand-deep) 61%); color: var(--white); }
+.site-footer .wrap { padding-block: 60px; display: flex; gap: 60px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.licences { display: flex; gap: 60px; align-items: center; flex-wrap: wrap; justify-content: center; }
+.licences img { height: auto; }
+.foot-cols { display: flex; gap: 16px; align-items: flex-start; }
+.foot-col { width: 109px; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.foot-col h4 { font-size: 16px; font-weight: 400; line-height: 24px; }
+.foot-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.foot-col a { display: block; padding: 4px 8px; font-size: 12px; line-height: 15px; text-align: center; transition: opacity .35s linear; }
+.foot-col a:hover { opacity: .5; }
+.stores { display: flex; flex-direction: column; gap: 8px; width: 120px; }
+.stores img { width: 120px; height: 40px; }
+@media (max-width: 760px) {
+  .site-footer .wrap { gap: 36px; padding-block: 40px; }
+  .licences { gap: 24px 32px; }
+  .licences img { transform: scale(.82); }
+  .foot-cols { flex-wrap: wrap; justify-content: center; }
+}
+
+/* ---------- Section heading (icon box + zh/en titles) ---------- */
+.sec-head { display: flex; gap: 24px; align-items: center; }
+.sec-head.center { flex-direction: column; text-align: center; }
+.icon-box { flex: none; width: 40px; height: 40px; border: 2px solid var(--white); border-radius: 8px; display: grid; place-items: center; }
+.icon-box svg { display: block; }
+.icon-box.bare { border: 0; width: 42px; height: 42px; }
+.sec-titles { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.sec-titles h2 { font-size: 38px; line-height: 42px; font-weight: 700; }
+.sec-titles .en { font-family: var(--font-en); font-weight: 300; font-size: 24px; line-height: 1.1; }
+.sec-titles .en.semi { font-family: var(--font-ch); font-weight: 400; font-size: 16px; line-height: 24px; } /* Body style (Figma 4193:2211) */
+
+@media (max-width: 760px) {
+  :root { --gutter: 16px; }
+  .sec-titles h2 { font-size: 28px; line-height: 34px; }
+  .sec-titles .en { font-size: 18px; }
+  .sec-titles { gap: 10px; }
+}
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Back to top (Figma 4213:10029) */
+.to-top { position: fixed; right: max(24px, env(safe-area-inset-right, 0px) + 16px); bottom: max(24px, env(safe-area-inset-bottom, 0px) + 16px); z-index: 60;
+  width: 60px; height: 60px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,.3)); opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity .3s linear, visibility .3s linear, transform .3s ease, filter .3s linear; }
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { transform: translateY(-3px); filter: drop-shadow(0 6px 10px rgba(0,0,0,.4)) brightness(1.05); }
+.to-top:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.to-top svg { display: block; }
+@media (max-width: 760px) { .to-top, .to-top svg { width: 48px; height: 48px; } }
+
+/* Phones: button rows sit side by side and centred; single buttons are centred */
+@media (max-width: 760px) {
+  .btn-row { justify-content: center; flex-wrap: nowrap; align-self: stretch !important; }
+  .btn-row .btn { flex: 1 1 0; min-width: 0; max-width: 190px; }
+  .hero-copy > .btn, .split-copy > .btn { align-self: center !important; }
+  .game-body .btn { margin-inline: auto; }
+}
+
+/* Article: single light look, as in the Figma frame (4106:794) */
+:root { color-scheme: light; }
+body { background: var(--paper); color: var(--ink); }
+.crumbs { background: #f6f6f6; border-bottom: 1px solid #d9d9d9; }
+.crumbs ol { list-style: none; margin: 0; height: 60px; display: flex; align-items: center; gap: 12px; padding-block: 0; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+.crumbs li { display: flex; align-items: center; gap: 12px; }
+.crumbs a { color: var(--brand); transition: color .35s linear; }
+.crumbs a:hover { color: var(--mint); }
+.crumbs [aria-current] { color: var(--ink-soft); }
+
+.layout { display: flex; gap: 56px; align-items: flex-start; padding-block: 72px; }
+.article { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 32px; }
+.rule { flex: none; width: 1px; align-self: stretch; background: var(--brand); }
+.aside { flex: none; width: 300px; display: flex; flex-direction: column; gap: 45px; align-items: center; }
+.aside .ad { width: 300px; border-radius: 24px; overflow: hidden; }
+.aside .ad img { width: 100%; height: auto; }
+.cats { display: flex; flex-direction: column; gap: 16px; text-align: center; width: 100%; }
+.cats h2 { font-size: 28px; line-height: 34px; font-weight: 600; }
+.cats a { color: var(--mint); font-size: 20px; line-height: 28px; font-weight: 500; transition: color .35s linear; }
+.cats a:hover { color: var(--brand); }
+
+.art-head { display: flex; flex-direction: column; gap: 16px; }
+.art-head h1 { font-size: 38px; line-height: 42px; font-weight: 700; text-wrap: pretty; }
+.art-head h1 .seg { display: inline-block; }
+.byline { color: var(--brand); font-size: 12px; line-height: 15px; }
+.lede, .article p { font-size: 16px; line-height: 24px; }
+
+.toc { background: #f4f4f4; border: 1px solid #b3b3b3; padding: 24px; display: flex; flex-direction: column; gap: 8px; }
+.toc-title { font-size: 16px; line-height: 24px; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 24px; }
+.toc ol ol { padding-left: 24px; margin-top: 8px; }
+.toc a { transition: color .35s linear; }
+.toc a:hover { color: var(--mint); }
+
+.block { display: flex; flex-direction: column; gap: 16px; }
+.block.cta { gap: 24px; align-items: center; }
+.block.cta > :not(.btn) { align-self: stretch; }
+.article h2, .article h3 { scroll-margin-top: 120px; }
+.block h2 { font-size: 38px; line-height: 42px; font-weight: 700; }
+.block h3 { font-size: 28px; line-height: 34px; font-weight: 600; }
+.block h4 { font-size: 20px; line-height: 34px; font-weight: 600; color: var(--brand); }
+.block img { width: 100%; height: auto; }
+.block img.banner { border-radius: 24px; }
+.step-label { background: var(--brand); color: var(--white); text-align: center; padding: 8px; border: 1px solid #ccc; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 16px; }
+.steps li { flex: 1 1 0; min-width: 0; background: var(--brand); color: var(--white); border: 1px solid #ccc; padding: 8px; text-align: center; }
+.step-arrow { flex: none; }
+.article a:not(.btn) { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.article .toc a { text-decoration: none; }
+.icon-180 { width: 180px; height: 180px; margin-inline: auto; }
+
+.tbl-wrap { width: 100%; overflow-x: auto; }
+.tbl { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 16px; line-height: 24px; text-align: center; }
+.tbl.wide { min-width: 640px; }
+.tbl th, .tbl td { border: 1px solid #ccc; padding: 8px; }
+.tbl thead th { background: var(--brand); color: var(--white); font-weight: 400; }
+.tbl tbody th { background: #d8e2e0; color: var(--brand); font-weight: 400; }
+.tbl tbody td { background: var(--white); }
+.tbl tbody th.k-dark { background: var(--brand); color: var(--white); }
+.tbl thead th[colspan] { font-weight: 400; }
+
+.cta { display: flex; flex-direction: column; gap: 24px; align-items: center; }
+.cta img { border-radius: 24px; width: 100%; height: auto; }
+
+.related { display: flex; flex-direction: column; gap: 32px; padding-bottom: 72px; }
+.related-head { text-align: center; color: #1a1a1a; display: flex; flex-direction: column; gap: 16px; }
+.related-head h2 { font-size: 38px; line-height: 42px; font-weight: 700; }
+.related-head p { font-family: var(--font-en); font-weight: 300; font-size: 24px; line-height: 1.1; }
+.rel-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.rel { border: 1px solid #b3b3b3; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 24px; background: var(--paper); }
+.rel .media { aspect-ratio: 400 / 256; border-radius: 8px; overflow: hidden; }
+.rel .media img { width: 100%; height: 100%; object-fit: cover; }
+.rel h3 { color: #1a1a1a; font-size: 24px; line-height: 28px; font-weight: 600; }
+.rel .tag { color: var(--mint); }
+
+@media (max-width: 1200px) {
+  .layout { flex-direction: column; gap: 48px; }
+  .rule { width: auto; height: 1px; }
+  .aside { position: static; width: 100%; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 32px; }
+  .aside .cats { order: -1; flex: 1 1 100%; }
+  .rel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .crumbs ol { height: 48px; font-size: 14px; gap: 8px; }
+  .crumbs li { gap: 8px; }
+  .layout { padding-block: 32px; }
+  .art-head h1, .block h2, .related-head h2 { font-size: 26px; line-height: 34px; }
+  .cats h2 { font-size: 24px; line-height: 30px; }
+  .block h3, .block h4 { font-size: 21px; line-height: 28px; }
+  .toc { padding: 18px; }
+  .toc ol { font-size: 15px; line-height: 22px; }
+  .cats a { font-size: 17px; line-height: 24px; }
+  .aside .ad { width: 100%; max-width: 300px; }
+  .rel-grid { grid-template-columns: minmax(0, 1fr); }
+  .rel h3 { font-size: 20px; }
+  .related-head p { font-size: 18px; }
+  .tbl { font-size: 14px; line-height: 22px; }
+  .steps { flex-direction: column; align-items: stretch; gap: 8px; }
+  .step-arrow { align-self: center; transform: rotate(90deg); width: 14px; height: 18px; }
+}
+.block > *, .article > *, .layout > * { min-width: 0; max-width: 100%; }
+@media (max-width: 1200px) { .article { width: 100%; flex: none; } }
+
+</style></head><body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="JP真人 首頁"><img src="img/logo.svg" alt="JP" width="101" height="48"></a>
+    <a class="btn btn-white head-reg" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="開啟選單"><span class="bars" aria-hidden="true"><span></span><span></span></span></button>
+    <nav class="nav" id="site-nav" aria-label="主選單">
+      <div class="nav-links"><a href="promotions.html">優惠列表</a><a href="random-multiplier.html">隨機倍率玩法</a><a href="jp-info.html" aria-current="page">JP真人資訊</a><a href="baccarat-tips.html">百家樂技巧</a><a href="about.html">關於JP真人</a></div>
+      <a class="btn btn-white" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a>
+    </nav>
+  </div>
+</header>
+<nav class="crumbs" aria-label="麵包屑"><div class="wrap"><ol>
+  <li><a href="index.html">首頁</a><svg width="10" height="9" viewBox="0 0 10 9" fill="none" aria-hidden="true"><path d="M0.223633 8.4472L8.22363 4.44723L0.223633 0.447204" stroke="#003F30"/></svg></li>
+  <li><a href="jp-info.html">百家樂資訊</a><svg width="10" height="9" viewBox="0 0 10 9" fill="none" aria-hidden="true"><path d="M0.223633 8.4472L8.22363 4.44723L0.223633 0.447204" stroke="#003F30"/></svg></li>
+  <li><span aria-current="page">MT真人荷官回歸竟不發牌？MT百家樂試玩與JP真人試玩教學</span></li></ol></div></nav>
+<div class="wrap layout">
+  <article class="article"><header class="art-head"><h1><span class="seg">MT真人荷官回歸竟不發牌？</span><span class="seg">MT百家樂試玩與JP真人試玩教學</span></h1><p class="byline">作者：TUZAMU / 25 / 10 月, 2026</p></header>
+<p class="lede">MT百家樂 荷官真的回歸了嗎？ MT真人荷官 為何從直接發牌轉為直播陪玩？本文完整解析 MT百家 新舊版本差異、莊閒投注規則與 MT百家樂試玩 流程，並比較JP真人百家樂的真人發牌及隨機倍率特色，帶你了解 JP真人試玩 操作方式與兩種遊戲的不同。</p>
+<nav class="toc" aria-label="文章目錄"><p class="toc-title">文章目錄</p><ol><li><a href="#s1">1. MT百家樂是什麼？</a><ol><li><a href="#s2">1.1 基本玩法與遊戲特色</a></li><li><a href="#s3">1.2 MT真人荷官</a></li><li><a href="#s4">1.3 牌局規則</a></li></ol></li><li><a href="#s5">2. MT真人荷官現況</a><ol><li><a href="#s6">2.1 發牌轉為直播陪玩</a></li><li><a href="#s7">2.2 MT百家樂現在玩法</a></li><li><a href="#s8">2.3 新舊版本差異</a></li></ol></li><li><a href="#s9">3. MT百家樂與JP真人比較</a></li><li><a href="#s10">4. MT百家樂試玩</a><ol><li><a href="#s11">4.1 試玩流程</a></li></ol></li><li><a href="#s12">5. JP真人試玩</a><ol><li><a href="#s13">5.1 試玩流程</a></li></ol></li><li><a href="#s14">6. 立即體驗JP真人百家樂隨機倍率</a></li><li><a href="#s15">7. 常見問題 FAQ</a><ol><li><a href="#s16">7.1 Q1：MT百家是什麼？與一般百家樂有什麼不同？</a></li><li><a href="#s17">7.2 Q2：MT真人荷官現在還有直接發牌嗎？</a></li><li><a href="#s18">7.3 Q3：MT百家樂新舊版本最大的差異是什麼？</a></li><li><a href="#s19">7.4 Q4：MT百家樂試玩需要先儲值嗎？</a></li><li><a href="#s20">7.5 Q5：JP真人試玩與MT百家樂試玩有什麼不同？</a></li></ol></li></ol></nav>
+<section class="block"><h2 id="s1">MT百家樂是什麼？</h2><p>MT百家樂是以百家樂牌局為核心的真人遊戲形式，玩家可以透過線上桌台觀看牌局畫面，並依照遊戲規則選擇莊、閒或和等投注項目。對曾經接觸過MT百家的玩家來說，過去最熟悉的特色就是由MT真人荷官直接坐在百家樂桌前發牌，讓玩家一邊觀看真人荷官洗牌、發牌與開牌，一邊參與每局投注。不過，目前MT百家樂的呈現方式已與過去不同，荷官直播與實際百家樂牌局分開呈現，直播陪玩成為新版特色之一。因此，想了解MT百家樂現在怎麼玩，就需要先認識基本規則、真人荷官角色，以及新舊版本的直播模式差異。</p><img src="img/x69a97ff0b5.jpg" alt="MT百家樂是什麼？" width="600" height="400" loading="lazy"></section><section class="block"><h3 id="s2">基本玩法與遊戲特色</h3><p>MT百家樂的基本玩法與一般百家樂相同，主要比較莊家與閒家的牌面點數，哪一方最接近9點，就依照百家樂規則判定結果。玩家在每局下注倒數結束前，可以選擇莊、閒、和等投注區域，再等待牌局完成。百家樂的補牌由固定規則決定，並不是玩家自行選擇是否補牌。MT百家的特色除了基本莊閒玩法，也包含真人百家樂的直播呈現方式，而目前版本更著重荷官直播陪玩與實際牌局畫面的搭配。對第一次接觸MT百家樂的玩家來說，除了理解百家樂下注規則，也應分清楚直播互動、真人桌台與實際發牌流程，才能掌握新版遊戲特色。</p><div class="tbl-wrap"><table class="tbl"><tbody><tr><th scope="row" class="k-dark">真人直播</th><td>MT真人荷官直播陪玩與互動</td></tr><tr><th scope="row" class="k-dark">牌局呈現</th><td>搭配DG真人百家樂發牌畫面</td></tr><tr><th scope="row" class="k-dark">經典玩法</th><td>MT百家樂保留莊、閒、和投注</td></tr><tr><th scope="row" class="k-dark">新版體驗</th><td>MT百家將荷官互動與牌局分開</td></tr></tbody></table></div></section><section class="block"><h3 id="s3">MT真人荷官</h3><p>過去的MT真人荷官主要負責真人百家樂桌台的洗牌、發牌與開牌，玩家進入MT百家樂後，就能直接看到荷官坐在桌前完成每局遊戲。現在的MT真人荷官則以直播陪玩與互動為主要呈現方式，不再像過去一樣由同一位MT荷官直接完成百家樂發牌。也就是說，MT真人荷官重新出現在直播畫面，不代表舊版發牌模式完全恢復，而是荷官的角色與直播內容出現改變。對關注MT百家是否回歸的玩家而言，了解真人荷官目前負責的直播內容，比單純確認荷官是否出現在畫面中更重要。</p><img src="img/xd099282d56.jpg" alt="MT真人荷官" width="1024" height="477" loading="lazy"></section><section class="block"><h3 id="s4">牌局規則</h3><p>MT百家樂的牌局主要分為莊、閒、和三種基本投注結果，莊家與閒家通常各取得兩張牌，再依照百家樂固定補牌規則決定是否發出第三張牌。A計為1點，2至9依牌面計點，10、J、Q、K計為0點，總點數只取個位數，例如7點加8點為15點，實際計算為5點。玩家在進行MT百家樂試玩或觀看牌局時，可以先熟悉莊閒點數、第三張牌補牌規則與勝負判定方式，再了解不同投注項目的派彩規則。即使MT百家樂提供牌路紀錄，歷史開獎結果也無法保證預測下一局走勢，理解規則仍是認識真人百家樂玩法的基礎。</p><div class="tbl-wrap"><table class="tbl"><tbody><tr><th scope="row" class="k-dark">投注項目</th><td>莊、閒、和三種基本選擇</td></tr><tr><th scope="row" class="k-dark">牌面點數</th><td>A算1點，2～9照牌面，10與花牌算0點</td></tr><tr><th scope="row" class="k-dark">點數計算</th><td>只取個位數，例如7＋8＝5點</td></tr><tr><th scope="row" class="k-dark">補牌與勝負</th><td>依固定規則補牌，最接近9點者勝</td></tr></tbody></table></div></section><section class="block"><h2 id="s5">MT真人荷官現況</h2><p>目前MT真人荷官已重新出現在直播內容中，但與早期直接坐在百家樂桌前發牌的模式不同。現在的MT百家樂將荷官直播陪玩與實際百家樂牌局分開呈現，玩家看到的MT荷官主要負責直播內容與互動，而百家樂牌局則可以看到DG真人桌台畫面。因此，想了解MT真人荷官是否恢復過去的發牌功能，不能只看荷官是否回歸，也需要確認目前由誰負責實際發牌、開獎與結果判定。這也是新版MT百家與舊版真人荷官模式最容易被混淆的地方。</p><img src="img/x75dbf254b8.jpg" alt="MT真人荷官現況" width="600" height="400" loading="lazy"></section><section class="block"><h3 id="s6">發牌轉為直播陪玩</h3><p>過去的MT真人荷官直接負責百家樂發牌，玩家觀看荷官時，也能同步看到洗牌、開牌與結果判定。現在則改以直播陪玩為主，MT荷官出現在直播畫面中，負責陪伴玩家觀看遊戲與進行互動，實際牌局則由另外的真人桌台畫面呈現。這種變化讓MT百家的直播形式與過去明顯不同，玩家不再只是觀看MT荷官直接發牌，而是同時接觸荷官直播與真人百家樂牌局兩種內容。對習慣舊版MT百家樂的玩家來說，最大的適應重點就是分辨直播陪玩畫面與實際牌局畫面的功能。</p><img src="img/xd22b889abc.jpg" alt="發牌轉為直播陪玩" width="1024" height="539" loading="lazy"></section><section class="block"><h3 id="s7">MT百家樂現在玩法</h3><p>現在進入MT百家樂時，玩家可以先觀察直播畫面中的MT荷官，再確認實際百家樂牌局的桌台內容。依照本文所描述的目前畫面，MT荷官主要負責直播陪玩，百家樂牌局則透過DG真人畫面呈現，玩家仍需依照實際遊戲介面提供的莊、閒等投注區域操作。對第一次接觸新版MT百家的玩家來說，可以先確認直播區域、發牌桌台、下注倒數、牌路紀錄與開獎結果的位置，再熟悉整個操作流程。如果只是想了解介面，也可以先確認平台是否提供MT百家樂試玩或示範功能，不必直接投入真實金額。</p><img src="img/xfd107c4976.jpg" alt="MT百家樂現在玩法" width="1024" height="572" loading="lazy"></section><section class="block"><h3 id="s8">新舊版本差異</h3><p>MT百家樂新舊版本最大的差異，在於MT真人荷官的角色與百家樂牌局呈現方式。舊版以MT荷官直接發牌為核心，玩家觀看真人荷官的同時，就能看到完整百家樂流程；新版則改為MT荷官直播陪玩，實際百家樂牌局另外呈現。兩者都與真人百家樂有關，但舊版重視真人荷官直接操作牌局的體驗，新版則將直播陪玩與牌局畫面分開。如果玩家習慣傳統真人荷官直接發牌，也可以進一步比較JP真人試玩的桌台形式，了解直播陪玩、真人發牌與隨機倍率玩法之間的差異。</p><div class="tbl-wrap"><table class="tbl wide"><tbody><tr><th scope="row" class="k-dark">比較項目</th><td>舊版MT百家樂</td><td>新版MT百家樂</td></tr><tr><th scope="row" class="k-dark">荷官角色</th><td>MT真人荷官直接發牌</td><td>MT荷官直播陪玩互動</td></tr><tr><th scope="row" class="k-dark">牌局畫面</th><td>MT荷官現場完成牌局</td><td>另以DG真人畫面呈現</td></tr><tr><th scope="row" class="k-dark">遊戲特色</th><td>真人發牌與開牌體驗</td><td>直播陪玩與牌局分開</td></tr></tbody></table></div></section><section class="block"><h2 id="s9">MT百家樂與JP真人比較</h2><p>比較MT百家樂與JP真人百家樂時，最明顯的差別在於荷官角色、直播內容與特殊玩法。目前MT百家著重MT真人荷官直播陪玩，百家樂牌局透過DG真人畫面呈現；JP真人百家樂則以真人荷官直接發牌的百家樂桌台為核心，玩家可以觀看荷官完成每局牌局，並操作莊、閒等投注區域。另外，JP真人百家樂主打隨機倍率玩法，玩家需要先完成當局下注，之後系統才會顯示該局倍率，不能提前知道倍率後再決定是否下注。對想體驗直播陪玩形式的玩家，可以先了解MT百家樂目前的直播模式；若偏好真人荷官直接發牌與隨機倍率特色，則可以透過JP真人試玩熟悉桌台與下注流程。需要注意的是，隨機倍率不代表每局都能獲得額外派彩，也不保證提高長期獲利機會。</p><div class="tbl-wrap"><table class="tbl wide"><tbody><tr><th scope="row" class="k-dark">比較項目</th><td>JP真人百家樂</td><td>MT百家樂</td></tr><tr><th scope="row" class="k-dark">荷官角色</th><td>真人荷官直接發牌</td><td>MT真人荷官直播陪玩</td></tr><tr><th scope="row" class="k-dark">牌局畫面</th><td>真人荷官現場開牌</td><td>透過DG真人畫面呈現</td></tr><tr><th scope="row" class="k-dark">玩法特色</th><td>真人發牌＋隨機倍率</td><td>荷官直播＋互動陪玩</td></tr><tr><th scope="row" class="k-dark">倍率機制</th><td>下注確認後顯示隨機倍率</td><td>以一般百家樂玩法為主</td></tr></tbody></table></div></section><section class="block"><h2 id="s10">MT百家樂試玩</h2><p>第一次接觸新版MT百家，可以先從MT百家樂試玩的操作流程開始了解，重點不是急著下注，而是確認目前的直播畫面、荷官角色與百家樂牌局如何搭配。由於現在的MT真人荷官主要以直播陪玩形式出現，玩家在體驗時應先觀察荷官直播區域，再確認實際發牌畫面、下注區域與結果顯示位置。如果平台提供免費試玩或示範模式，可以優先利用這些功能熟悉操作；實際是否提供免註冊試玩、免費籌碼或其他體驗方式，仍應以平台當下顯示的功能為準。透過MT百家樂試玩了解新版桌台，也有助於辨識直播陪玩與真人發牌的不同。</p><img src="img/x9ed7e99558.jpg" alt="MT百家樂試玩" width="600" height="400" loading="lazy"></section><section class="block"><h3 id="s11">試玩流程</h3><p>進行MT百家樂試玩時，可以先進入提供MT百家樂的遊戲平台，找到MT真人相關分類，確認目前是否開放遊戲或試玩功能，再選擇想了解的百家樂桌台。進入畫面後，先辨識MT真人荷官直播區域與實際百家樂發牌區域，接著觀察莊、閒、和投注位置、下注倒數、牌路與結果顯示方式。若有免費試玩功能，可先利用試玩熟悉操作；若沒有，則可先觀看牌局與查閱遊戲規則，不必為了了解介面而直接投入真實金額。透過這樣的MT百家樂試玩流程，就能比較清楚掌握新版MT百家的操作重點與直播特色。</p><ol class="steps"><li>STEP 1：進入MT真人網站</li><svg class="step-arrow" width="16" height="21" viewBox="0 0 16 21" aria-hidden="true"><path d="M1 1l13 9.5L1 20" fill="none" stroke="#003f30" stroke-width="2" stroke-linejoin="round"/></svg><li>STEP 2：點選台桌</li><svg class="step-arrow" width="16" height="21" viewBox="0 0 16 21" aria-hidden="true"><path d="M1 1l13 9.5L1 20" fill="none" stroke="#003f30" stroke-width="2" stroke-linejoin="round"/></svg><li>STEP 3：開始試玩</li></ol></section><section class="block"><h2 id="s12">JP真人試玩</h2><p>除了了解MT百家樂試玩，想比較不同真人百家樂形式的玩家，也可以進一步認識JP真人試玩。JP真人百家樂與目前MT荷官直播陪玩的呈現方式不同，主要以真人荷官發牌、莊閒投注與隨機倍率玩法為特色。玩家進入JP真人桌台後，可以直接觀看真人荷官完成發牌，並在下注倒數內選擇投注項目；當局下注確認後，系統才會顯示隨機倍率。對熟悉舊版MT真人荷官發牌模式的玩家來說，JP真人試玩提供了另一種認識真人發牌桌台的方式，也能進一步比較兩種遊戲在直播互動、下注流程與特殊玩法上的差異。</p><img src="img/x509d0e808c.jpg" alt="JP真人試玩" width="600" height="400" loading="lazy"></section><section class="block"><h3 id="s13">試玩流程</h3><p>進行JP真人試玩時，可以先前往JP真人網站，找到真人遊戲分類，再選擇JP真人百家樂桌台。進入遊戲後，先熟悉真人荷官直播、莊閒投注區域、籌碼選擇、下注倒數與牌路資訊，接著了解隨機倍率的顯示時機。JP真人百家樂的隨機倍率是在完成下注後才出現，因此玩家無法事先知道當局倍率，也不能在倍率顯示後修改已確認的投注。若平台提供免費試玩模式，建議先透過JP真人試玩熟悉整個流程，了解真人發牌與倍率規則，再依照自己的娛樂預算決定是否繼續體驗。</p><ol class="steps"><li>STEP 1：進入JP真人官網</li><svg class="step-arrow" width="16" height="21" viewBox="0 0 16 21" aria-hidden="true"><path d="M1 1l13 9.5L1 20" fill="none" stroke="#003f30" stroke-width="2" stroke-linejoin="round"/></svg><li>STEP 2：點選真人</li><svg class="step-arrow" width="16" height="21" viewBox="0 0 16 21" aria-hidden="true"><path d="M1 1l13 9.5L1 20" fill="none" stroke="#003f30" stroke-width="2" stroke-linejoin="round"/></svg><li>STEP 3：選擇想玩的遊戲種類</li><svg class="step-arrow" width="16" height="21" viewBox="0 0 16 21" aria-hidden="true"><path d="M1 1l13 9.5L1 20" fill="none" stroke="#003f30" stroke-width="2" stroke-linejoin="round"/></svg><li>STEP 4：開始下注</li></ol></section><section class="block cta"><h2 id="s14">立即體驗JP真人百家樂隨機倍率</h2><p>看完MT百家樂與MT真人荷官新舊版本的差異後，如果想體驗真人荷官直接發牌的百家樂桌台，不妨前往<a href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">JP真人</a>，透過JP真人試玩熟悉莊閒下注、真人發牌、牌路資訊與隨機倍率玩法。不同於目前MT百家以直播陪玩為主的呈現方式，JP真人百家樂讓玩家直接觀看真人荷官完成牌局，並在確認下注後顯示隨機倍率。想了解兩種真人百家樂的不同，可以先從試玩認識遊戲規則與操作流程，再依自己的娛樂預算決定是否參與。</p><img class="banner" src="img/xdcaeb312b9.jpg" alt="立即體驗JP真人百家樂隨機倍率" width="2172" height="724" loading="lazy"><a class="btn btn-green" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">免費試玩</a></section><section class="block"><h2 id="s15">常見問題 FAQ</h2></section><section class="block"><h3 id="s16">Q1：MT百家是什麼？與一般百家樂有什麼不同？</h3><p>MT百家是以真人百家樂為核心的遊戲形式，基本玩法包含莊、閒、和投注，並依照百家樂規則判定結果。MT百家樂與一般百家樂的主要差異在於直播呈現方式，目前以荷官直播陪玩搭配實際真人百家樂牌局畫面為主。玩家除了需要熟悉基本下注規則，也應分清楚MT真人荷官的直播互動與實際發牌內容，才能了解新版MT百家的遊戲特色。</p></section><section class="block"><h3 id="s17">Q2：MT真人荷官現在還有直接發牌嗎？</h3><p>依照本文介紹的目前模式，MT真人荷官已重新出現在直播畫面，但不再像舊版一樣直接負責百家樂發牌，而是以直播陪玩與玩家互動為主。實際百家樂牌局則可以看到DG真人桌台畫面，因此MT真人荷官回歸並不代表過去的真人發牌模式完全恢復。想確認MT百家樂目前的玩法，應以實際平台提供的直播與牌局畫面為準。</p></section><section class="block"><h3 id="s18">Q3：MT百家樂新舊版本最大的差異是什麼？</h3><p>舊版MT百家樂由MT荷官直接坐在真人桌前發牌，玩家可以同步觀看洗牌、發牌與開牌流程；新版則將荷官直播陪玩與實際百家樂牌局分開呈現。最大的改變是MT真人荷官從直接發牌的角色轉向直播陪玩，而基本莊閒投注與百家樂點數規則仍是玩家需要了解的核心內容。對想比較新舊MT百家的玩家來說，荷官角色與實際發牌畫面的差異是最重要的觀察重點。</p></section><section class="block"><h3 id="s19">Q4：MT百家樂試玩需要先儲值嗎？</h3><p>MT百家樂試玩是否需要儲值，取決於平台有沒有提供免費試玩或示範模式。如果平台開放免費體驗，玩家可以先熟悉MT真人荷官直播、莊閒投注區、下注倒數與牌局結果；如果沒有免費試玩功能，也可以先觀看牌局或閱讀規則，不需要為了了解遊戲操作而直接投入真實金額。建議進行MT百家樂試玩前，先確認平台是否提供免費模式及相關使用條件。</p></section><section class="block"><h3 id="s20">Q5：JP真人試玩與MT百家樂試玩有什麼不同？</h3><p>JP真人試玩主要讓玩家熟悉真人荷官直接發牌、莊閒投注與隨機倍率玩法，倍率會在完成下注後才顯示；MT百家樂試玩則著重了解目前MT真人荷官直播陪玩與實際百家樂牌局分開呈現的模式。兩者最大的差異在於荷官角色、桌台畫面與特殊玩法。如果想比較MT百家樂與JP真人百家樂，可以先從直播形式、發牌流程及倍率規則進行了解，再選擇適合自己的體驗方式。</p></section></article>
+  <div class="rule" aria-hidden="true"></div>
+  <aside class="aside" aria-label="側欄">
+    <a class="ad" href="index.html#promos"><img src="img/side1.jpg" alt="送1000體驗金 立即體驗JP百家樂" width="300" height="224" loading="lazy"></a>
+    <nav class="cats" aria-label="資訊分類"><h2>資訊分類</h2><a href="article.html">百家樂試玩怎麼玩？真人百家樂規則、百家試玩步驟與JP百家樂特色</a><a href="article-2.html" aria-current="page">MT真人荷官回歸竟不發牌？MT百家樂試玩與JP真人試玩教學</a><a href="article-3.html">MT荷官不發牌了？MT荷官消失後改真人直播，JP真人百家樂試玩比較</a><a href="article-4.html">MT荷官回歸了嗎？MT荷官直播與JP真人百家樂解析</a><a href="article-5.html">百家樂線上平台推薦｜真人百家樂排名與JP、MT、DG比較</a><a href="article-6.html">線上百家樂推薦怎麼挑？線上百家樂詐騙辨識、真人美女百家樂與JP真人試玩</a><a href="article-7.html">百家樂賺錢是真的嗎？JP真人百家樂實測、JP倍數百家樂與真人試玩</a><a href="article-8.html">JP真人百家樂實測｜3大攻略技巧與JP真人試玩解析</a><a href="article-9.html">MT百家樂 vs JP百家樂｜MT、JP真人荷官顏值比較與JP真人試玩</a></nav>
+    <a class="ad" href="index.html#promos"><img src="img/side2.jpg" alt="JP百家 下注包賠" width="300" height="224" loading="lazy"></a>
+  </aside>
+</div>
+<section class="wrap related" aria-labelledby="rel-h"><div class="related-head"><h2 id="rel-h">相關文章</h2><p>Latest Articles</p></div>
+  <div class="rel-grid"><a class="rel" href="article.html"><div class="media"><img src="img/post1.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>百家樂試玩怎麼玩？真人百家樂規則、百家試玩步驟與JP百家樂特色</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-2.html"><div class="media"><img src="img/post2.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>MT真人荷官回歸竟不發牌？MT百家樂試玩與JP真人試玩教學</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-3.html"><div class="media"><img src="img/post3.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>MT荷官不發牌了？MT荷官消失後改真人直播，JP真人百家樂試玩比較</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-4.html"><div class="media"><img src="img/post4.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>MT荷官回歸了嗎？MT荷官直播與JP真人百家樂解析</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-5.html"><div class="media"><img src="img/post5.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>百家樂線上平台推薦｜真人百家樂排名與JP、MT、DG比較</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-6.html"><div class="media"><img src="img/post6.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>線上百家樂推薦怎麼挑？線上百家樂詐騙辨識、真人美女百家樂與JP真人試玩</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-7.html"><div class="media"><img src="img/post7.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>百家樂賺錢是真的嗎？JP真人百家樂實測、JP倍數百家樂與真人試玩</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-8.html"><div class="media"><img src="img/post8.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>JP真人百家樂實測｜3大攻略技巧與JP真人試玩解析</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a><a class="rel" href="article-9.html"><div class="media"><img src="img/post9.jpg" alt="" width="448" height="285" loading="lazy"></div><h3>MT百家樂 vs JP百家樂｜MT、JP真人荷官顏值比較與JP真人試玩</h3><p class="tag">JP真人介紹｜百家樂資訊</p></a></div></section>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="licences">
+      <img src="img/pagcor.png" alt="PAGCOR" width="230" height="67">
+      <img src="img/mga.png" alt="Malta Gaming Authority" width="274" height="55">
+      <img src="img/fsc.png" alt="British Virgin Islands Financial Services Commission" width="283" height="68">
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col"><h4>遊戲聲明</h4><ul><li><a href="terms.html#disclaimer">免責聲明</a></li><li><a href="terms.html#terms">服務條款</a></li><li><a href="terms.html#privacy">隱私權政策</a></li><li><a href="terms.html#responsible">責任娛樂</a></li><li><a href="terms.html#contact">聯絡我們</a></li></ul></div>
+      <div class="foot-col"><h4>JP真人教學</h4><ul><li><a href="random-multiplier.html">隨機倍率玩法</a></li><li><a href="baccarat-tips.html">百家樂技巧</a></li><li><a href="jp-info.html">JP真人資訊</a></li><li><a href="article.html">百家樂玩法</a></li><li><a href="about.html">關於JP真人</a></li></ul></div>
+      <div class="stores"><a href="#" aria-label="Google Play 下載"><img src="img/gplay.png" alt="GET IT ON Google Play" width="120" height="40"></a><a href="#" aria-label="App Store 下載"><img src="img/appstore.png" alt="Download on the App Store" width="120" height="40"></a></div>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="to-top" type="button" aria-label="回到頂端"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true"><circle cx="30" cy="30" r="30" fill="#FFD43B"/><path d="M10.6152 38.7692L30.2306 20.7692L49.846 38.7692" stroke="#003F30" stroke-width="6"/></svg></button>
+<script>
+(function(){
+  var t=document.getElementById('nav-toggle'), n=document.getElementById('site-nav');
+  if(t&&n){ t.addEventListener('click',function(){ var o=n.classList.toggle('open'); t.setAttribute('aria-expanded',o?'true':'false'); t.setAttribute('aria-label',o?'關閉選單':'開啟選單'); });
+    n.addEventListener('click',function(e){ if(e.target.closest('a')){ n.classList.remove('open'); t.setAttribute('aria-expanded','false'); t.setAttribute('aria-label','開啟選單'); } }); }
+  var tr=document.querySelector('.ticker-track');
+  function setDur(){ if(tr){ tr.style.setProperty('--ticker-dur', (tr.scrollWidth/2/100).toFixed(2)+'s'); } }
+  setDur(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(setDur); window.addEventListener('resize', setDur);
+  // Every page opens at the top (unless the link targets an anchor)
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+  if(!location.hash) window.scrollTo(0,0);
+  // Back-to-top button (Figma 4213:10029)
+  var up=document.getElementById('to-top');
+  if(up){ var tick=function(){ up.classList.toggle('show', window.scrollY>400); };
+    window.addEventListener('scroll', tick, {passive:true}); tick();
+    up.addEventListener('click', function(){ window.scrollTo({top:0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}); }); }
+})();
+</script>
+</body></html>

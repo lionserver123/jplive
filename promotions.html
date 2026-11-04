@@ -39,14 +39,14 @@ h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
   padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
 
 /* ---------- Buttons (190 x 50 everywhere; hover states from the Figma UI page) ---------- */
-.btn { display: inline-flex; align-items: center; justify-content: center; height: 50px; width: 190px; flex: none;
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 50px; width: 180px; flex: none;
   border-radius: 80px; border: 1px solid var(--white); font-weight: 400; font-size: 16px; line-height: 24px;
   white-space: nowrap; cursor: pointer; transition: background-color .3s linear, color .3s linear, border-color .3s linear, box-shadow .3s linear; }
 .btn-white { background: var(--white); color: var(--brand); }
 .btn-white:hover { background: var(--mint); border-color: var(--brand-bright); color: var(--white); transition-duration: .35s; }
 .btn-green { background: var(--brand); color: var(--white); }
 .btn-green:hover { background: var(--white); border-color: var(--brand-bright); color: var(--brand); }
-.btn-ghost { background: transparent; color: var(--white); width: 136px; }
+.btn-ghost { background: transparent; color: var(--white); }
 .btn-ghost:hover { background: var(--white); color: var(--brand-deep); }
 .btn-gold { background: var(--gold); color: var(--brand); border-color: var(--gold-edge); }
 .btn-gold:hover { box-shadow: 0 0 20px #ffe100; }
@@ -84,7 +84,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   .nav-links { flex-direction: column; }
   .nav-links a { width: 100%; height: 48px; align-items: center; text-align: center; border-bottom: 1px solid rgba(255,255,255,.08); }
   .nav > .btn { display: none; }
-  .head-reg { display: inline-flex; margin-left: auto; width: auto; height: 44px; padding: 0 20px; font-size: 14px; }
+  .head-reg { display: inline-flex; margin-left: auto; }
   .nav-links a::after { display: none; }
 }
 
@@ -128,7 +128,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 /* Back to top (Figma 4213:10029) */
-.to-top { position: fixed; right: max(24px, env(safe-area-inset-right, 0px) + 16px); bottom: max(24px, env(safe-area-inset-bottom, 0px) + 16px); z-index: 60;
+.to-top { position: fixed; right: max(24px, env(safe-area-inset-right, 0px) + 16px, (100vw - 1920px) / 2 + 24px); /* stays inside a 1920px-wide area */ bottom: max(24px, env(safe-area-inset-bottom, 0px) + 16px); z-index: 60;
   width: 60px; height: 60px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,.3)); opacity: 0; visibility: hidden; transform: translateY(12px);
   transition: opacity .3s linear, visibility .3s linear, transform .3s ease, filter .3s linear; }
@@ -140,11 +140,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 /* Phones: button rows sit side by side and centred; single buttons are centred */
 @media (max-width: 760px) {
-  .btn-row { justify-content: center; flex-wrap: nowrap; align-self: stretch !important; }
-  .btn-row .btn { flex: 1 1 0; min-width: 0; max-width: 190px; }
+  .btn-row { justify-content: center; flex-wrap: wrap; align-self: stretch !important; }  /* 180px buttons: side by side when they fit, stacked otherwise */
   .hero-copy > .btn, .split-copy > .btn { align-self: center !important; }
   .game-body .btn { margin-inline: auto; }
 }
+
+@media (max-width: 760px) { .site-header .wrap { gap: 12px; } }
+@media (max-width: 380px) { .logo img { width: 80px; height: auto; } }
 
 /* Home: single dark look, as in the Figma frame XL-1440 */
 :root { color-scheme: dark; }
@@ -387,11 +389,11 @@ body { background: #0f1c1c; }
 <div class="home page"><header class="site-header">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="JP真人 首頁"><img src="img/logo.svg" alt="JP" width="101" height="48"></a>
-    <a class="btn btn-white head-reg" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a>
+    <a class="btn btn-white head-reg" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">立即註冊</a>
     <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="開啟選單"><span class="bars" aria-hidden="true"><span></span><span></span></span></button>
     <nav class="nav" id="site-nav" aria-label="主選單">
       <div class="nav-links"><a href="promotions.html" aria-current="page">優惠列表</a><a href="random-multiplier.html">隨機倍率玩法</a><a href="jp-info.html">JP真人資訊</a><a href="baccarat-tips.html">百家樂技巧</a><a href="about.html">關於JP真人</a></div>
-      <a class="btn btn-white" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a>
+      <a class="btn btn-white" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">立即註冊</a>
     </nav>
   </div>
 </header>

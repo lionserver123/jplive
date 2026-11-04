@@ -37,14 +37,14 @@ h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
   padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
 
 /* ---------- Buttons (190 x 50 everywhere; hover states from the Figma UI page) ---------- */
-.btn { display: inline-flex; align-items: center; justify-content: center; height: 50px; width: 190px; flex: none;
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 50px; width: 180px; flex: none;
   border-radius: 80px; border: 1px solid var(--white); font-weight: 400; font-size: 16px; line-height: 24px;
   white-space: nowrap; cursor: pointer; transition: background-color .3s linear, color .3s linear, border-color .3s linear, box-shadow .3s linear; }
 .btn-white { background: var(--white); color: var(--brand); }
 .btn-white:hover { background: var(--mint); border-color: var(--brand-bright); color: var(--white); transition-duration: .35s; }
 .btn-green { background: var(--brand); color: var(--white); }
 .btn-green:hover { background: var(--white); border-color: var(--brand-bright); color: var(--brand); }
-.btn-ghost { background: transparent; color: var(--white); width: 136px; }
+.btn-ghost { background: transparent; color: var(--white); }
 .btn-ghost:hover { background: var(--white); color: var(--brand-deep); }
 .btn-gold { background: var(--gold); color: var(--brand); border-color: var(--gold-edge); }
 .btn-gold:hover { box-shadow: 0 0 20px #ffe100; }
@@ -82,7 +82,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   .nav-links { flex-direction: column; }
   .nav-links a { width: 100%; height: 48px; align-items: center; text-align: center; border-bottom: 1px solid rgba(255,255,255,.08); }
   .nav > .btn { display: none; }
-  .head-reg { display: inline-flex; margin-left: auto; width: auto; height: 44px; padding: 0 20px; font-size: 14px; }
+  .head-reg { display: inline-flex; margin-left: auto; }
   .nav-links a::after { display: none; }
 }
 
@@ -126,7 +126,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 /* Back to top (Figma 4213:10029) */
-.to-top { position: fixed; right: max(24px, env(safe-area-inset-right, 0px) + 16px); bottom: max(24px, env(safe-area-inset-bottom, 0px) + 16px); z-index: 60;
+.to-top { position: fixed; right: max(24px, env(safe-area-inset-right, 0px) + 16px, (100vw - 1920px) / 2 + 24px); /* stays inside a 1920px-wide area */ bottom: max(24px, env(safe-area-inset-bottom, 0px) + 16px); z-index: 60;
   width: 60px; height: 60px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,.3)); opacity: 0; visibility: hidden; transform: translateY(12px);
   transition: opacity .3s linear, visibility .3s linear, transform .3s ease, filter .3s linear; }
@@ -138,11 +138,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 /* Phones: button rows sit side by side and centred; single buttons are centred */
 @media (max-width: 760px) {
-  .btn-row { justify-content: center; flex-wrap: nowrap; align-self: stretch !important; }
-  .btn-row .btn { flex: 1 1 0; min-width: 0; max-width: 190px; }
+  .btn-row { justify-content: center; flex-wrap: wrap; align-self: stretch !important; }  /* 180px buttons: side by side when they fit, stacked otherwise */
   .hero-copy > .btn, .split-copy > .btn { align-self: center !important; }
   .game-body .btn { margin-inline: auto; }
 }
+
+@media (max-width: 760px) { .site-header .wrap { gap: 12px; } }
+@media (max-width: 380px) { .logo img { width: 80px; height: auto; } }
 
 /* Home: single dark look, as in the Figma frame XL-1440 */
 :root { color-scheme: dark; }
@@ -327,11 +329,11 @@ body { background: #0f1c1c; }
 <div class="home"><header class="site-header">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="JP真人 首頁"><img src="img/logo.svg" alt="JP" width="101" height="48"></a>
-    <a class="btn btn-white head-reg" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a>
+    <a class="btn btn-white head-reg" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">立即註冊</a>
     <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="開啟選單"><span class="bars" aria-hidden="true"><span></span><span></span></span></button>
     <nav class="nav" id="site-nav" aria-label="主選單">
       <div class="nav-links"><a href="promotions.html">優惠列表</a><a href="random-multiplier.html">隨機倍率玩法</a><a href="jp-info.html">JP真人資訊</a><a href="baccarat-tips.html">百家樂技巧</a><a href="about.html">關於JP真人</a></div>
-      <a class="btn btn-white" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a>
+      <a class="btn btn-white" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">立即註冊</a>
     </nav>
   </div>
 </header>
@@ -345,7 +347,7 @@ body { background: #0f1c1c; }
           <p class="sub">獨家隨機倍率玩法，每一局都有驚喜</p>
           <p>JP真人百家樂首創隨機倍率玩法，保留經典百家樂規則，讓每一次下注都有機會迎來更多驚喜，打造公平、流暢的真人娛樂體驗。</p><p>提供 JP真人試玩、JP百家樂試玩，搭配真人荷官直播、高畫質低延遲技術，輕鬆體驗百家樂、龍虎與骰寶等熱門遊戲。</p>
         </div>
-        <div class="btn-row"><a class="btn btn-white" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a><a class="btn btn-green" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">免費試玩</a></div>
+        <div class="btn-row"><a class="btn btn-white" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">立即註冊</a><a class="btn btn-green" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">免費試玩</a></div>
       </div>
     </div>
     <div class="ticker">
@@ -356,23 +358,23 @@ body { background: #0f1c1c; }
 
   <section class="wrap" id="games"><div class="sec-head"><div class="icon-box bare"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true"><rect x="1" y="1" width="40" height="40" rx="8" stroke="#35A495" stroke-width="2"/><path d="M28.3154 14.4081C26.4959 12.5118 24.3681 10.9327 22.1538 9.52294C21.6087 9.17587 21.2995 9.00374 20.9997 9C20.699 9.00374 20.3907 9.17587 19.8456 9.52294C17.6313 10.9327 15.5045 12.5118 13.684 14.4081C10.9575 17.2492 8.41431 21.5664 10.4171 25.4833C12.3485 29.2618 17.8794 30.1 20.5082 26.8052C18.9405 30.8951 16.839 32.9963 16.839 32.9963H16.8428L16.839 33H25.1613C25.1613 33 23.0552 30.8942 21.4847 26.7968C24.1106 30.1019 29.65 29.2655 31.5833 25.4833C33.5861 21.5655 31.0429 17.2482 28.3164 14.4081H28.3154Z" fill="#FFD43B"/></svg></div><div class="sec-titles"><h2>JP真人熱門遊戲</h2><p class="en">JP Live Games</p></div></div>
     <div class="grid-3"><article class="game shine shine-game"><div class="media"><img src="img/game1.jpg" alt="JP隨機倍率百家樂 遊戲畫面" loading="lazy" width="483" height="219"></div>
-<div class="game-body"><div><h3 class="card-title">JP隨機倍率百家樂</h3><p>獨家隨機倍率玩法，每一局都有驚喜。</p></div><a class="btn btn-ghost" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a></div></article><article class="game shine shine-game"><div class="media"><img src="img/game2.jpg" alt="龍虎鬥 遊戲畫面" loading="lazy" width="483" height="219"></div>
-<div class="game-body"><div><h3 class="card-title">龍虎鬥</h3><p>真人荷官即時對戰，玩法快速簡單。</p></div><a class="btn btn-ghost" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a></div></article><article class="game shine shine-game"><div class="media"><img src="img/game3.jpg" alt="骰寶 遊戲畫面" loading="lazy" width="483" height="219"></div>
-<div class="game-body"><div><h3 class="card-title">骰寶</h3><p>多元下注方式，體驗刺激真人娛樂。</p></div><a class="btn btn-ghost" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a></div></article></div></section>
+<div class="game-body"><div><h3 class="card-title">JP隨機倍率百家樂</h3><p>獨家隨機倍率玩法，每一局都有驚喜。</p></div><a class="btn btn-ghost" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">立即註冊</a></div></article><article class="game shine shine-game"><div class="media"><img src="img/game2.jpg" alt="龍虎鬥 遊戲畫面" loading="lazy" width="483" height="219"></div>
+<div class="game-body"><div><h3 class="card-title">龍虎鬥</h3><p>真人荷官即時對戰，玩法快速簡單。</p></div><a class="btn btn-ghost" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">立即註冊</a></div></article><article class="game shine shine-game"><div class="media"><img src="img/game3.jpg" alt="骰寶 遊戲畫面" loading="lazy" width="483" height="219"></div>
+<div class="game-body"><div><h3 class="card-title">骰寶</h3><p>多元下注方式，體驗刺激真人娛樂。</p></div><a class="btn btn-ghost" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">立即註冊</a></div></article></div></section>
 
   <section class="wrap" id="rg"><div class="sec-head"><div class="icon-box bare"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true"><rect x="1" y="1" width="40" height="40" rx="8" stroke="#35A495" stroke-width="2"/><path d="M26.6591 18.0275C26.5088 18.0275 26.3594 18.0329 26.2118 18.0445C26.6146 17.2458 26.8423 16.3413 26.8423 15.3832C26.8423 12.1345 24.2272 9.5 21.0004 9.5C17.7737 9.5 15.1586 12.1336 15.1586 15.3832C15.1586 16.3413 15.3863 17.2449 15.7891 18.0445C15.6415 18.0329 15.4921 18.0275 15.3418 18.0275C12.1159 18.0275 9.5 20.6611 9.5 23.9107C9.5 27.1603 12.115 29.7939 15.3418 29.7939C17.5807 29.7939 19.5253 28.525 20.5052 26.6634C19.0256 30.5192 17.0677 32.5 17.0677 32.5H24.9279C24.9279 32.5 22.9611 30.5103 21.4806 26.6374C22.4569 28.5134 24.4086 29.7939 26.6582 29.7939C29.8841 29.7939 32.5 27.1603 32.5 23.9107C32.5 20.6611 29.885 18.0275 26.6582 18.0275H26.6591Z" fill="#FFD43B"/></svg></div><div class="sec-titles"><h2>JP × RG真人百家樂</h2><p class="en">JP × RG Live Baccarat</p></div></div>
     <div class="panel split">
       <div class="media"><img src="img/rg.jpg" alt="JP × RG 真人百家樂" loading="lazy" width="691" height="340"></div>
       <div class="split-copy"><div class="copy-block"><h3 class="h1"><span class="en">JP</span>真人百家樂串接RG真人桌台</h3>
         <p>JP真人百家樂 採用RG真人百家樂真人桌台直播服務， 結合穩定直播技術與真人荷官互動， 提供流暢清晰的遊戲體驗。</p>
-        <p>在經典真人百家樂基礎上， JP加入獨家隨機倍率玩法， 讓傳統牌局多一層倍率變化與驚喜。</p></div><div class="btn-row"><a class="btn btn-white" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a><a class="btn btn-green" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">免費試玩</a></div></div>
+        <p>在經典真人百家樂基礎上， JP加入獨家隨機倍率玩法， 讓傳統牌局多一層倍率變化與驚喜。</p></div><div class="btn-row"><a class="btn btn-white" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">立即註冊</a><a class="btn btn-green" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">免費試玩</a></div></div>
     </div></section>
 
   <section class="wrap" id="brand"><div class="sec-head"><div class="icon-box bare"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true"><rect x="1" y="1" width="40" height="40" rx="8" stroke="#35A495" stroke-width="2"/><path d="M21 9C16.2722 16.4287 9.5 21 9.5 21C9.5 21 16.2722 25.5713 21 33C25.7278 25.5713 32.5 21 32.5 21C32.5 21 25.7278 16.4287 21 9Z" fill="#FFD43B"/></svg></div><div class="sec-titles"><h2>JP真人品牌理念</h2><p class="en">JP Live Brand Philosophy</p></div></div>
     <div class="panel split reverse">
       <div class="split-copy"><div class="copy-block"><h3 class="h1-en">每一局 都值得期待</h3>
         <p>JP真人 相信，遊戲的樂趣不只來自結果，更來自每一次等待與期待。「每一局，都值得期待」是 JP真人 堅持的品牌理念，透過創新玩法與優質體驗，打造更精彩的真人娛樂享受。</p>
-        <p>JP真人百家樂 結合經典百家樂玩法與獨家隨機倍率機制，搭配JP真人試玩、真人荷官直播與高畫質技術，讓每一次下注都充滿驚喜。</p></div><div class="btn-row"><a class="btn btn-white" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a><a class="btn btn-green" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">免費試玩</a></div></div>
+        <p>JP真人百家樂 結合經典百家樂玩法與獨家隨機倍率機制，搭配JP真人試玩、真人荷官直播與高畫質技術，讓每一次下注都充滿驚喜。</p></div><div class="btn-row"><a class="btn btn-white" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">立即註冊</a><a class="btn btn-green" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">免費試玩</a></div></div>
       <div class="media"><img src="img/brand.jpg" alt="首創隨機倍率玩法 每一局都有驚喜" loading="lazy" width="691" height="340"></div>
     </div></section>
 
@@ -385,7 +387,7 @@ body { background: #0f1c1c; }
 
   <section class="wrap" id="demo"><div class="sec-head"><div class="icon-box bare"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true"><rect x="1" y="1" width="40" height="40" rx="8" stroke="#35A495" stroke-width="2"/><path d="M10.5147 20.5524H15.9588C16.375 19.3318 17.0055 18.2744 17.7995 17.2981H10.5147C9.67934 17.2981 9 18.0459 9 18.9252C9 19.8046 9.67934 20.5524 10.5147 20.5524Z" fill="#FFD43B"/><path d="M10.515 24.701H15.4207C15.4 24.4566 15.3897 24.1807 15.3897 23.9136C15.3869 23.1094 15.4818 22.3082 15.6716 21.5287H10.515C9.68246 21.5287 9.00781 22.2389 9.00781 23.1153C9.00781 23.9907 9.68246 24.701 10.515 24.701Z" fill="#FFD43B"/><path d="M18.412 18.0765C17.1323 19.5949 16.3947 21.5346 16.3242 23.5624H17.6557C17.7242 21.9036 18.3247 20.318 19.3582 19.0637L18.412 18.0765Z" fill="#FFD43B"/><path d="M10.515 16.3218H18.7742C20.2297 15.0626 22.015 14.2999 23.8923 14.1337C23.6809 13.5907 23.2036 13.2128 22.6492 13.1505C22.5966 13.1545 22.543 13.1485 22.4885 13.1485H10.515C10.4596 13.1485 10.4051 13.1535 10.3506 13.1505C9.55189 13.2405 8.959 13.9735 9.00222 14.8182C9.04638 15.663 9.71163 16.3237 10.515 16.3218Z" fill="#FFD43B"/><path d="M24.9453 31.266V32.6676C26.8809 32.6004 28.7329 31.8229 30.1827 30.4707L29.2394 29.4786C28.0423 30.5696 26.5276 31.1997 24.9453 31.266Z" fill="#FFD43B"/><path d="M24.0173 31.2413C22.5421 31.0978 21.1487 30.4648 20.0371 29.4341L19.0938 30.4262C20.4571 31.7181 22.1879 32.4985 24.0164 32.6469V31.2413H24.0173Z" fill="#FFD43B"/><path d="M19.3823 28.7427C18.4032 27.5675 17.8056 26.0957 17.675 24.5387H16.3398C16.4751 26.4676 17.2127 28.2956 18.4389 29.7358L19.3823 28.7427Z" fill="#FFD43B"/><path d="M20.0087 18.3683C21.124 17.3218 22.5297 16.6798 24.0171 16.5354V15.1308C22.1736 15.2802 20.4306 16.0725 19.0625 17.3812L20.0087 18.3683Z" fill="#FFD43B"/><path d="M10.3517 12.1792C10.4062 12.1752 10.4597 12.1732 10.5152 12.1732H22.4887C22.5432 12.1732 22.5977 12.1762 22.6522 12.1792C23.4508 12.0862 24.0409 11.3522 23.9977 10.5085C23.9545 9.66373 23.292 9.00198 22.4896 9H10.5152C9.71178 9.00198 9.05029 9.66373 9.00613 10.5085C8.96291 11.3522 9.55393 12.0852 10.3517 12.1792Z" fill="#FFD43B"/><path d="M28.965 19.3575C31.3422 21.8601 31.3422 25.9176 28.965 28.4202C26.5877 30.9228 22.7334 30.9228 20.3571 28.4202C17.9799 25.9176 17.9799 21.8601 20.3571 19.3575C22.7344 16.8559 26.5887 16.8559 28.965 19.3575Z" fill="#FFD43B"/><path d="M10.515 28.8505H16.6798C16.1273 27.8712 15.742 26.797 15.5428 25.6772H10.515C9.68246 25.6772 9.00781 26.3875 9.00781 27.2639C9.00781 28.1403 9.68246 28.8505 10.515 28.8505Z" fill="#FFD43B"/><path d="M32.9823 24.5387H31.6471C31.5146 26.1184 30.901 27.6101 29.8984 28.7931L30.8409 29.7852C32.0915 28.3371 32.846 26.4903 32.9823 24.5387Z" fill="#FFD43B"/><path d="M30.2156 17.3386C28.762 15.9676 26.896 15.1783 24.9453 15.11V16.5117C26.5436 16.578 28.0714 17.2199 29.2741 18.3308L30.2156 17.3386Z" fill="#FFD43B"/><path d="M10.515 33H21.3534C19.742 32.3491 18.3448 31.2917 17.3084 29.8268H10.515C9.68246 29.8268 9.00781 30.537 9.00781 31.4134C9.00781 32.2888 9.68246 33 10.515 33Z" fill="#FFD43B"/><path d="M31.6689 23.5624H33.0004C32.9289 21.5119 32.1763 19.5534 30.8721 18.0281L29.9297 19.0192C30.9858 20.2804 31.5994 21.8828 31.6689 23.5624Z" fill="#FFD43B"/></svg></div><div class="sec-titles"><h2>JP真人試玩</h2><p class="en">JP Live Demo</p></div></div>
     <div class="panel demo">
-      <div class="demo-stage"><img src="img/demo.jpg" alt="JP LIVE 試玩大廳畫面" loading="lazy" width="1478" height="832"><a class="btn btn-gold" href="https://pc.wu88.live/user-login?promotionId=SEO006" target="_blank" rel="noopener">立即註冊</a></div>
+      <div class="demo-stage"><img src="img/demo.jpg" alt="JP LIVE 試玩大廳畫面" loading="lazy" width="1478" height="832"><a class="btn btn-gold" href="https://jplive01.tz6868.com/" target="_blank" rel="noopener">立即註冊</a></div>
       <div class="demo-copy"><h3 class="h1"><span class="en">JP</span>真人百家樂串接RG真人桌台</h3>
         <div><p>JP真人百家樂 採用RG真人百家樂真人桌台直播服務， 結合穩定直播技術與真人荷官互動， 提供流暢清晰的遊戲體驗。</p>
         <p>在經典真人百家樂基礎上， JP加入獨家隨機倍率玩法， 讓傳統牌局多一層倍率變化與驚喜。</p></div></div>
